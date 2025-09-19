@@ -1,7 +1,7 @@
-# Türk Eleği – A Novel Prime Sieving Algorithm
+# Turkish Sieve – A Novel Prime Sieving Algorithm
 
 ## Introduction
-Türk Eleği (The Turkish Sieve) is a newly developed algorithm for prime number detection 
+The Turkish Sieve is a newly developed algorithm for prime number detection 
 that does **not rely on modular arithmetic**.  
 It is lightweight, memory-efficient, and highly parallelizable.
 
@@ -25,13 +25,13 @@ This project is licensed under a **dual-license model**:
 See [LICENSE.md](./LICENSE.md) for details.
 
 For licensing inquiries:
-📧 Email: your-email-here
+📧 Email: bilgisofttr@gmail.com
 
 ## Citation
 If you use this algorithm in academic research, please cite:
 @misc{cakanli2025turkelegi,
 author = {Hüseyin ÇAKANLI},
-title = {Türk Eleği: A Novel Prime Sieving Algorithm Without Modular Arithmetic},
+title = {Turkish Sieve: A Novel Prime Sieving Algorithm Without Modular Arithmetic},
 year = {2025},
 howpublished = {arXiv preprint},
 

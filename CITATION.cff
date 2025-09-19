@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "Turkish Sieve: A Novel Prime Sieving Algorithm Without Modular Arithmetic"
+authors:
+  - family-names: "Çakanlı"
+    given-names: "Hüseyin"
+date-released: 2025-09-18
+doi: "10.48550/arXiv.placeholder"
+license: "Dual License (Non-commercial + Commercial)"
+version: "1.0.0"

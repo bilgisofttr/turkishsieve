@@ -29,4 +29,9 @@ For licensing inquiries:
 
 ## Citation
 If you use this algorithm in academic research, please cite:
+@misc{cakanli2025turkelegi,
+author = {Hüseyin ÇAKANLI},
+title = {Türk Eleği: A Novel Prime Sieving Algorithm Without Modular Arithmetic},
+year = {2025},
+howpublished = {arXiv preprint},
 

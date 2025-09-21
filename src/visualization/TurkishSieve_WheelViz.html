@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>6n±1 Animation - 5, 7, 11 ,13,17,19 Wheels</title>
+  <title>6n±1 Animation - 5, 7, 11 ,13, 17, 19 Wheels</title>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
 </head>
 <body>
@@ -19,37 +19,31 @@ const gap =20;
 let startMoving = false;
 let startTime;
 
-// 5 wheel
 const wheelUnits5 = 10;
 const firstTick5 = 7;
 const secondTick5 = 10;
 const number5 = 5;
 
-// 7 wheel
 const wheelUnits7 = 14; 
 const firstTick7 = 9;   
 const secondTick7 = 14;
 const number7 = 7; 
 
-// 11 wheel
 const wheelUnits11 = 22;
 const firstTick11 = 15;
 const secondTick11 = 22;
 const number11 = 11;
 
-// 13 wheel
 const wheelUnits13 = 26;
 const firstTick13 = 17;
 const secondTick13 = 26;
 const number13 = 13;
 
-// 17 wheel
 const wheelUnits17 = 34;
 const firstTick17 = 23;
 const secondTick17 = 34;
 const number17 = 17;
 
-// 19 wheel
 const wheelUnits19 = 38;
 const firstTick19 = 25;
 const secondTick19 = 38;
@@ -64,7 +58,6 @@ let coloredBoxes13 = [];
 let coloredBoxes17 = [];
 let coloredBoxes19 = [];
 
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
   wheelRadius5 = (boxSize * wheelUnits5) / (2 * PI);
@@ -73,9 +66,10 @@ function setup() {
   wheelRadius13 = (boxSize * wheelUnits13) / (2 * PI);
   wheelRadius17 = (boxSize * wheelUnits17) / (2 * PI);
   wheelRadius19 = (boxSize * wheelUnits19) / (2 * PI);
-  for (let n = 1; n <= 88; n++) {
+
+  for (let n = 1; n <= 1000; n++) {
     numbers.push(6*n - 1);
-    if (n!=88) numbers.push(6*n + 1);
+    if (n!=1000) numbers.push(6*n + 1);
     coloredBoxes5.push(false);
     coloredBoxes7.push(false);
     coloredBoxes11.push(false);
@@ -87,7 +81,8 @@ function setup() {
 }
 
 function draw() {
-  background(30);
+
+   background(30);
   drawTitle();
   drawBoxes();
 
@@ -98,16 +93,22 @@ function draw() {
   let wheel17X = wheel13X - wheelRadius13 - wheelRadius17 - gap;
   let wheel19X = wheel17X - wheelRadius17 - wheelRadius19 - gap;
 
+
   drawWheel(wheel5X, wheelRadius5, wheelUnits5, firstTick5, secondTick5, number5,tickLength, rotating5, angle5, 
             (a)=>{angle5 += (speed/boxSize)*(TWO_PI/wheelUnits5);}, "blue");
+
   drawWheel(wheel7X, wheelRadius7, wheelUnits7, firstTick7, secondTick7,number7, tickLength, rotating7, angle7, 
             (a)=>{angle7 += (speed/boxSize)*(TWO_PI/wheelUnits7);}, "darkgreen");
+
   drawWheel(wheel11X, wheelRadius11, wheelUnits11, firstTick11, secondTick11,number11, tickLength, rotating11, angle11, 
             (a)=>{angle11 += (speed/boxSize)*(TWO_PI/wheelUnits11);}, "red");
+
   drawWheel(wheel13X, wheelRadius13, wheelUnits13, firstTick13, secondTick13,number13, tickLength, rotating13, angle13, 
             (a)=>{angle13 += (speed/boxSize)*(TWO_PI/wheelUnits13);}, "goldenrod");
+			
   drawWheel(wheel17X, wheelRadius17, wheelUnits17, firstTick17, secondTick17,number17, tickLength, rotating17, angle17, 
             (a)=>{angle17 += (speed/boxSize)*(TWO_PI/wheelUnits17);}, "purple");
+
   drawWheel(wheel19X, wheelRadius19, wheelUnits19, firstTick19, secondTick19,number19, tickLength, rotating19, angle19, 
             (a)=>{angle19 += (speed/boxSize)*(TWO_PI/wheelUnits19);}, "brown");			
 }
@@ -144,6 +145,7 @@ function drawWheel(baseX, radius, units, tick1, tick2,number, tickLen, rotating,
   textAlign(CENTER, CENTER);
   textSize(12);
   textStyle(BOLD);
+
   text(`Units: 2x${number}=${units}`, 0, -10);
   text(`Ticks: ${tick1}, ${tick2}`, 0, 10);
   textSize(15);
@@ -181,27 +183,7 @@ function drawBoxes(){
 
   for(let i=0; i<numbers.length; i++){
     let x = width - (offset - i*boxSize);
-if(x + boxSize < 0){
-  let isComposite5 = coloredBoxes5[i];
-  let isComposite7 = coloredBoxes7[i];
-  let isComposite11 = coloredBoxes11[i];
-  let isComposite13 = coloredBoxes13[i];
-  let isComposite17 = coloredBoxes17[i];
-  let isComposite19 = coloredBoxes19[i];
-
-  let isComposite = isComposite5 || isComposite7 || isComposite11 || isComposite13 || isComposite17 || isComposite19;
-
-  if(isComposite){
-    if(!notPrimes.includes(numbers[i])){
-      notPrimes.push(numbers[i]);
-    }
-  } else {
-    if(!primes.includes(numbers[i])){
-      primes.push(numbers[i]);
-    }
-  }
-  continue; 
-}
+    if(x + boxSize < 0)  continue; 
 
     if(x < 10 + labelW) continue;
     if(x > width + boxSize) continue;
@@ -242,6 +224,7 @@ if (numbers[i] >= 95 && numbers[i] % 19 === 0 &&
   coloredBoxes19[i] = true;
 }
 
+
 let fillColor = coloredBoxes5[i] ? color(0,0,255) :
                 (coloredBoxes7[i] ? color(0,100,0) :
                 (coloredBoxes11[i] ? color(255,0,0) :
@@ -259,12 +242,14 @@ let textColor = (coloredBoxes5[i] || coloredBoxes7[i] || coloredBoxes11[i] || co
     textSize(boxSize/3);
     text(numbers[i], x + boxSize/2, baseY + boxSize/2);
 
+
     fill(255);
     stroke(0);
     rect(x, baseY + boxSize, boxSize, boxSize);
     fill(0);
     noStroke();
     text(i, x + boxSize/2, baseY + boxSize + boxSize/2);
+
 
     let isComposite = (coloredBoxes5[i] || coloredBoxes7[i] || coloredBoxes11[i] || coloredBoxes13[i] || coloredBoxes17[i] || coloredBoxes19[i]);
 
@@ -332,12 +317,13 @@ function drawTitle(){
   textSize(48);
   textStyle(BOLD);
 
-  fill(250, 220, 100);      
+  fill(250, 220, 100);       
 
-  stroke(30, 30, 60);  
+  stroke(30, 30, 60);       
   strokeWeight(3);
   text(title, x, y);
   pop();
+
 
   push();
   textAlign(CENTER, TOP);

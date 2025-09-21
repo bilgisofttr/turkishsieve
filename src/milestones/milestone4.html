@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>6n±1 Animatioon - 5 Wheel</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+<body>
+<script>
+let numbers = [];
+let boxSize = 57; 
+let wheelRadius5=10;
+let angle5 = 0;
+let rotating5 = false;
+let speed = 4; 
+let offset = 0;
+
+let startMoving = false;
+let startTime;
+
+// 5 çemberi
+const wheelUnits5 = 10;
+const firstTick5 = 7;
+const secondTick5 = 10;
+const number5 = 5;
+
+const tickLength = 10; 
+
+let coloredBoxes5 = [];
+
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+
+  wheelRadius5 = (boxSize * wheelUnits5) / (2 * PI);
+
+  for (let n = 1; n <= 800; n++) {
+    numbers.push(6*n - 1);
+    if (n !=800) numbers.push(6*n + 1);
+    coloredBoxes5.push(false);
+  }
+  
+  startTime = millis();
+}
+
+function draw() {
+  background(30);
+  drawTitle();
+  drawBoxes();
+
+
+  let wheel5X = width - wheelRadius5 - 710;
+
+
+  drawWheel(
+    wheel5X, wheelRadius5, wheelUnits5, 
+    firstTick5, secondTick5, number5, 
+    tickLength, rotating5, angle5, 
+    (a)=>{angle5 += (speed/boxSize)*(TWO_PI/wheelUnits5);}, 
+    "blue"
+  );
+}
+
+function drawWheel(baseX, radius, units, tick1, tick2, number, tickLen, rotating, angle, updateFunc, colorName){
+  push();
+  let wheelY = height - (boxSize*3) - 40 - radius; // kutular üç satır oldu
+  translate(baseX, wheelY);
+
+  let startAngle = PI/2; 
+  if(rotating) updateFunc();
+  rotate(startAngle + angle);
+
+  noFill();
+  stroke(255);
+  strokeWeight(2);
+  ellipse(0, 0, radius*2);
+
+  strokeWeight(4);
+  const tickPositions = [tick1, tick2];
+  for(let i of tickPositions){
+    let a = (i-1)*(TWO_PI/units);
+    let x1 = cos(a)*radius;
+    let y1 = sin(a)*radius;
+    let x2 = cos(a)*(radius - tickLen);
+    let y2 = sin(a)*(radius - tickLen);
+    line(x1, y1, x2, y2);
+  }
+
+
+  push();
+  rotate(-startAngle - angle);
+  fill(colorName);
+  noStroke();
+  textAlign(CENTER, CENTER);
+  textSize(16);
+  text(`Units: 2x${number}=${units}`, 0, -10);
+  text(`Ticks: ${tick1}, ${tick2}`, 0, 10);
+  textSize(18);
+  textStyle(BOLD);
+  text(`Prime: ${number}`, 0, -radius-40);
+  text(`Start Number: 5x${number}=${5*number}`, 0, -radius-20);
+  pop();
+
+  pop();
+}
+
+function drawBoxes(){
+  let baseY = height - boxSize*3 - 40; 
+
+  if(!startMoving){
+    if(millis() - startTime > 2000){ 
+      startMoving = true;
+    }
+  }
+
+  if(startMoving){
+    offset += speed;
+  }
+
+  let wheel5X = width - wheelRadius5 - 737;
+
+  let labelW = boxSize*1.5;
+  drawLabelBox(10, baseY, "Numbers", labelW);
+  drawLabelBox(10, baseY + boxSize, "Index", labelW);
+  drawLabelBox(10, baseY + boxSize*2, "Is prime?", labelW);
+
+  for(let i=0; i<numbers.length; i++){
+    let x = width - (offset - i*boxSize);
+
+    
+    if(x + boxSize < 0)    continue; 
+
+    
+    if(x < 10 + labelW) continue;
+    if(x > width + boxSize) continue;
+
+    if(!rotating5 && numbers[i] === 25 && x < wheel5X + boxSize && x > wheel5X - boxSize) rotating5 = true;
+    if(numbers[i] >= 25 && numbers[i] % 5 === 0 &&
+       x + boxSize/2 >= wheel5X - boxSize/2 && x + boxSize/2 <= wheel5X + boxSize/2) {
+      coloredBoxes5[i] = true;
+    }
+
+    let isComposite = (coloredBoxes5[i]);
+    let fillColor = isComposite ? color(0,0,255) : 255;
+    let textColor = isComposite ? color(255) : color(0);
+
+    // Numbers
+    fill(fillColor);
+    stroke(0);
+    rect(x, baseY, boxSize, boxSize);
+    fill(textColor);
+    noStroke();
+    textAlign(CENTER, CENTER);
+    textSize(boxSize/3);
+    text(numbers[i], x + boxSize/2, baseY + boxSize/2);
+
+    // Index
+    let indexFill = isComposite ? color(100) : color(255);
+    let indexText = isComposite ? color(255) : color(0);
+    fill(indexFill);
+    stroke(0);
+    rect(x, baseY + boxSize, boxSize, boxSize);
+    fill(indexText);
+    noStroke();
+    text(i, x + boxSize/2, baseY + boxSize + boxSize/2);
+
+    // Is prime?
+    if(isComposite){
+      fill(100);
+      stroke(0);
+      rect(x, baseY + boxSize*2, boxSize, boxSize);
+      fill(255);
+      noStroke();
+      text("False", x + boxSize/2, baseY + boxSize*2 + boxSize/2);
+    } else {
+      fill(255);
+      stroke(0);
+      rect(x, baseY + boxSize*2, boxSize, boxSize);
+      fill(0);
+      noStroke();
+      text("True", x + boxSize/2, baseY + boxSize*2 + boxSize/2);
+    }
+  }
+}
+
+function drawLabelBox(x, y, label, w){
+  fill(200);
+  stroke(0);
+  rect(x, y, w, boxSize);
+  fill(0);
+  noStroke();
+  textAlign(CENTER, CENTER);
+  textSize(boxSize/3);
+  text(label, x + w/2, y + boxSize/2);
+}
+
+
+function drawTitle(){
+  const title = "The Turkish Sieve";
+  const y = 100;             // üstten 100px aşağı
+  const x = width / 2;       // yatay ortala
+
+  // gölge (daha koyu, hafif aşağıda)
+  push();
+  textAlign(CENTER, TOP);
+  textSize(48);              
+  textStyle(BOLD);
+  noStroke();
+  fill(0, 60);               
+  text(title, x + 4, y + 6); 
+  pop();
+
+
+  push();
+  textAlign(CENTER, TOP);
+  textSize(48);
+  textStyle(BOLD);
+  // dolgu rengi
+  fill(250, 220, 100);       
+
+  stroke(30, 30, 60);        
+  strokeWeight(3);
+  text(title, x, y);
+  pop();
+
+
+  push();
+  textAlign(CENTER, TOP);
+  textSize(14);
+  textStyle(NORMAL);
+  noStroke();
+  fill(200);
+  text("© 2025 Algorithm & Animation : Hüseyin Çakanlı", x, y + 50);
+  pop();
+}
+
+</script>
+</body>
+</html>

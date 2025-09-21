@@ -1,1 +1,399 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[turkish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{calc}
+\usepackage{graphicx}   % Resim eklemek için
+\usepackage{float}      % [H] ile tam konumlandırma
+\usepackage{subcaption} % preamble kısmına ekle
+
+\newlength{\imgwidth}
+
+\newcommand\scalegraphics[1]{%   
+    \settowidth{\imgwidth}{\includegraphics{#1}}%
+    \setlength{\imgwidth}{\minof{\imgwidth}{\textwidth}}%
+    \includegraphics[width=\imgwidth]{#1}%
+}
+
+\geometry{left=3cm,right=3cm,top=3cm,bottom=3cm}
+
+\title{\textbf{Türk Eleği}: Asal Sayıları Belirlemede Modüler Aritmetik Kullanmayan Devrimsel Bir Yaklaşım}
+\author{Hüseyin Çakanlı\\
+İstanbul Teknik Üniversitesi, Jeodezi ve Fotogrametri Mühendisliği\\
+Atatürk Üniversitesi, Bilgisayar Programcılığı\\
+\texttt{[e-posta / GitHub / YouTube linki]}
+}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Bu çalışmada, klasik asal sayı eleklerinden farklı olarak; modüler aritmetiğe ihtiyaç duymayan, yalnızca toplama ve çarpma gibi temel işlemlerle çalışan, yeni bir asal sayı belirleme algoritması tanıtılmaktadır. \textbf{``Türk Eleği''} olarak adlandırılan bu yöntem, düşük bellek ayak izi, yüksek paralelleştirme kapasitesi, deterministik yapısı ve büyük sayılarla çalışabilme özelliği sayesinde literatürdeki mevcut yaklaşımlardan ayrılmaktadır.
+
+\textbf{Türk Eleği}, matematik eğitiminden yüksek performanslı bilgi işlem uygulamalarına kadar geniş bir kullanım alanı sunmaktadır. Algoritma yalnızca matematiksel bir yenilik değil, aynı zamanda kriptografi, kuantum sonrası güvenlik, bulut ve gömülü sistemler için devrimsel bir potansiyel taşımaktadır. 
+
+Çalışma, akademi dışından da disiplinler arası bir bakış açısıyla; karmaşık görünen matematiksel problemler için basit ve zarif çözümlerinin bulunabileceğini kanıtlamaktadır. 
+
+\textbf{Türk Eleği}, yalnızca bir algoritma değil, asal sayı araştırmalarına farklı bir bakış açısı getiren bir manifesto niteliğindedir.
+\end{abstract}
+
+\section{Giriş}
+Asal sayılar, matematiksel teorinin ve modern kriptografinin temel yapı taşlarındandır. Asal sayıları bulma ve test etme yöntemleri, yüzyıllardır matematikçilerin ilgi odağı olmuştur. 
+
+\textit{Eratosthenes Eleği} gibi klasik yöntemler, asal sayıların tespiti için temel teşkil etse de, büyük sayılarla çalışırken bellek ve işlemci gücü açısından kısıtlamalar barındırır. Bu çalışmada sunulan \textbf{``Türk Eleği''} algoritması, bu klasik kısıtlamaları aşmayı hedefleyen yenilikçi ve alternatif bir yaklaşım sunmaktadır. 
+
+Algoritma, sayıların doğasında bulunan örüntüleri; geleneksel yöntemlerin aksine modüler aritmetik kullanmadan, basit aritmetik işlemler ve bit operasyonlarıyla keşfeder.
+
+\subsection{Önceki Çalışmalar}
+
+\subsubsection{Klasik Eleme Yöntemleri}
+\begin{itemize}
+    \item \textbf{\textit{Eratosthenes Eleği:}} MÖ 3. yüzyılda geliştirilmiş, $O(n \log \log n)$ karmaşıklığında basit bir algoritma
+    \item \textbf{\textit{Euler Eleği:}} Eratosten yönteminin geliştirilmiş hâli
+    \item \textbf{\textit{Atkin Eleği:}} 2003’te geliştirilmiş, $O(n/\log \log n)$ karmaşıklığında modern bir yaklaşım sunar
+\end{itemize}
+
+\subsubsection{Klasik Eleme Yöntemlerindeki Yaklaşımlar}
+\begin{itemize}
+    \item Segmented sieves (Bölümlenmiş elekler)
+    \item Paralel eleme algoritmaları
+    \item Donanım hızlandırmalı yaklaşımlar
+\end{itemize}
+
+Ancak bu algoritmalar genellikle:
+\begin{itemize}
+    \item Modüler aritmetik hesaplamalara dayanır
+    \item Bellek tüketimi yüksektir
+    \item Paralelleştirme kabiliyeti sınırlıdır
+\end{itemize}
+
+\textbf{Türk Eleği}, bu geleneksel sınırları aşarak tamamen yeni bir paradigma ortaya koymaktadır.
+
+\section{Türk Eleği Metodolojisi}
+
+\subsection{Temel Kavramlar ve Teorik Çerçeve}
+Eleme işlemlerinde algoritmik temel bir yaklaşımla: sayılar yerine, bu sayıların karşılığı olan ve belirlenen indeksleme metotları ile birbirlerine raharlıkla dönüştürülebilen; byte dizilerinin veya bit dizilerinin kullanılmasıdır. Bit dizileri ile çalışmak hem düşük bellek ayak izi hem de hız avantajı sağlamaktadır.
+
+\textbf{Türk Eleği} henüz formülizasyonu tespit edilememiş olan kompleks dağılımdaki asal sayılar yerine; asal olmayan sayıların dağılımındaki düzenli kalıpları tanımlayan, yeni bir matematiksel çerçeve sunar.
+Asal sayıları ve katlarını belirlemek için; geleneksel modüler aritmetik yerine de, keşfettiğimiz kesin aritmetik örüntüleri veya bunların karşılıkları olan bit desenlerini kullanır.
+
+Belirlenen indeksleme sistemi ve bit dizilerinin kullanımı ile, işlenmek üzere ele alınan sayıların veya katlarının sayısal değerlerinin bir önemi olmamaktadır. Formülizasyonu belirlenen örüntülerle bit dizisinin neresinden başlanıp, hangi adımlarla ilerleneceği algoritmanın bel kemiğini oluşturmaktadır. Algoritma bu özelliği ile 0-N gibi bir aralıkta çalışabildiği gibi, N-M gibi değişken limitler için de aynı performansı sergilemektedir.
+
+
+\subsection{5'ten Büyük Tek Sayılarla Adayların Belirlenmesi}
+Literatürdeki kabüllerle 2 hariç tüm çift sayılar ve 1 sayısı; asal olmadıkları için dikkate alınmayacaktır.
+\textit{Şekil 1}'den de görüleceği üzere; 1'den büyük tüm tek sayılar için 3 sütunluk bir tablo düşünüldüğünde :
+\textbf{ k=1,2,3,\dots} ile \textbf{6k - 3, 6k - 1 ve 6k + 1} formu oluşmaktadır. 
+
+\vspace{0.5cm} % 1 cm boşluk
+3'ün katları aynı sütuna denk geldiğinden dolayı bu sütundaki sayıların tamamı da elenmiş olmaktadır. Dolayısı ile işlencek olan bit dizilerinin boyutu; baştan elenen 1 sayısı, tüm çift sayılar ve 3'ün katı olan sayıların haricinde kalan tek sayılar için N/24 byte olacaktır. Diğer bir deyişle N sayısının 1/3' ü kadar bit olacaktır. 
+
+(Her 1 milyar limit için 39.74 MB)
+\begin{figure}[H]
+\centering
+\scalegraphics{1.png}
+\caption{$N_3_n = 6n - 3, N_n = 6n \pm 1, \quad n=1,2,3,\dots$}
+\label{fig:number-index}
+\end{figure}
+
+\subsection{İndeks ve Sayı Dönüşümleri}
+    \textbf{Türk Eleği} algoritmasında sayılar ve indeksler arasındaki dönüşümler için aşağıdaki formüller kullanılmaktadır.
+\begin{figure}[H]
+  \centering
+  % Sol sütun: formüller (solda hizalı)
+  \begin{minipage}[t]{0.55\textwidth}
+    \raggedright
+
+    \vspace{0.8em}
+
+    \begin{flushleft}
+    \(
+    \displaystyle
+    \text{number2idx}(n) \;=\; \left\lfloor \frac{n-5}{6} \right\rfloor \cdot 2 
+    \;+\;
+    \begin{cases}
+      1, & \text{eğer } n \bmod 6 = 5,\\[4pt]
+      2, & \text{aksi takdirde}
+    \end{cases}
+    \;-\; 1
+    \)
+    \end{flushleft}
+
+    \vspace{1.0em}
+
+    \begin{flushleft}
+    \(
+    \displaystyle
+    \text{idx2number}(i) \;=\; 5 \;+\; 3 \cdot i \;+\;
+    \begin{cases}
+      0, & \text{eğer } (i-1) \bmod 2 = \pm 1,\\[4pt]
+      1, & \text{aksi takdirde}
+    \end{cases}
+    \)
+    \end{flushleft}
+
+  \end{minipage}%
+  \hfill
+  % Sağ sütun: resim (sağa dayalı)
+  \begin{minipage}[t]{0.42\textwidth}
+    \centering
+\begin{figure}[H]
+\centering
+\scalegraphics{donusum1.png}
+\caption{indeks dönüşümleri.}
+\label{fig:number-index}
+\end{figure}
+  \end{minipage}
+
+  
+  \label{fig:number-index}
+\end{figure}
+
+\subsection{Algoritmik Yaklaşım:} 
+\begin{enumerate}
+\textbf{ \item Ön İşlem Aşaması:} Temel Asalların Belirlenmesi. 
+
+\vspace{0.5cm} % 1 cm boşluk
+Neredeyse tüm eleme algoritmaları; verilen son limite kadar asal olan sayıların belirlenmesi için; ele alınan herhangi bir sayının son limitin kareköküne kadar olan asal sayılara bölünüp bölünmediğinin belirlenmesi işlemlerine dayanır. 
+
+\textbf{Türk Eleği} algoritmasında da eleme işlemleri; asal olan sayıların katlarının işaretlemesi işlemlerine dayandığı için, ilk etapta verilen son limit değerinin karekökün'ne kadar temel asalların belirlenmesi gerekmektedir.
+\textbf{ \item Eleme Aşaması:} Bileşik sayıların elenmesi.
+
+Klasik elekerde olduğu gibi eleme işlemi işaretlenmemiş tüm tek sayıların katlarının belirlenmesi ilkesine dayanmaktadır. Şekil 3'te de görüleceği üzere ele alınan sayının katlarını belirlemede modüler aritmetik kullanılmadan; asal olmayan sayılar ritmik toplamlarla ilerlenerek belirlenebilmektedir.
+  \begin{figure}[H]
+\centering
+\scalegraphics{5-7-11-13katlari.jpg}
+\caption{5,7,11 ve 13 ün Katlarının Elenmesi}
+\label{fig:number-index}
+\end{figure}
+
+\textbf{ \item Sonuçların İşlenmesi:} İstenirse sonuçların sunumu.
+
+Asal adeti, asal listelerin göstermi veya dosyalara yazılması.
+
+\vspace{0.5cm} % 1 cm boşluk
+
+\end{enumerate}
+\vspace{0.5cm} % 1 cm boşluk
+\textbf{Örneklendirmeler :}
+
+\vspace{0.5cm} % 1 cm boşluk
+\textbf{5 için :} 
+  
+ Sayılarla : \textbf{25} - 35 - 55 - 65 - 85 - 95 .... --> (+10, +20, +10, +20, +10 ...)
+  
+ İndekslerle : \textbf{7 - 10 - 17 - 20 - 27 - 30 ....} --> (+3, +7, +3, +7, +3 ...)  
+
+Parametreler : Start : 7, Step1 : 3, Step2 : 7
+
+\vspace{0.5cm} % 1 cm boşluk
+\textbf{7 için :} 
+ 
+  Sayılarla : \textbf{35} - 49 - 77 - 91 - 119 - 133 .... --> (+14, +28, +14, +28, +14 ...)
+  
+  İndekslerle : \textbf{10 - 15 - 24 - 29 - 38 - 43 ....} --> (+5, +9, +5, +9, +5 ...) 
+
+Parametreler : Start : 10, Step1 : 5, Step2 : 9
+
+\vspace{0.5cm} % 1 cm boşluk
+\textbf{11 için :} 
+
+  Sayılarla : \textbf{55} - 77 - 121 - 143 - 187 - 209 .... --> (+22, +44, +22, +44, +22 ...)
+  
+  İndekslerle : \textbf{17 - 24 - 39 - 46 - 61 - 68 ....} --> (+7, +15, +7, +15, +7 ...)
+
+Parametreler : Start : 17, Step1 : 7, Step2 : 15
+
+\vspace{0.5cm} % 1 cm boşluk
+\textbf{13 için :} 
+
+  Sayılarla : \textbf{65} - 91 - 143 - 169 - 221 - 247 .... --> (+26, +52, +26, +52, +26...)
+  
+  İndekslerle : \textbf{20 - 29 - 46 - 55 - 72 - 81 ....} --> (+9, +17, +9, +17, +9...)  
+
+Parametreler : Start : 20, Step1 : 9, Step2 : 17
+
+\vspace{0.5cm} % 1 cm boşluk
+...
+
+\vspace{0.5cm} % 1 cm boşluk
+  Şeklinde örüntüler keşfedilmiş ve bu durumun, tüm sayılar için geçerli olduğu kanıtlanmıştır. 
+  İteratif eleme işlemlerinde \textbf{Start}, \textbf{Step1} ve \textbf{Step2} ile isimlendirilen bu üç parametrenin basit toplamlarla hesap edilmesi yeterlidir.
+
+\vspace{0.5cm} % 1 cm boşluk
+\textbf{Start Değerlerinin Hesabı:}
+\vspace{0.5cm} % 1 cm boşluk 
+ 
+  Örneklendirmelerden de görüldüğü üzere, katların elenmeye başlandığı ilk sayılar; 5 sayısının katları olan; 
+  
+  \textbf{25, 35, 55, 65, 85, 95 ...} sayıları, bu sayıların da indeks karşılıkları \textbf{7, 10, 17, 20, 27, 30, 37 ...} şeklinde; \textbf{Start} veya \textbf{Start Index} değerleri ritmik artımlarla elde edilebilmektedir.
+
+\vspace{0.5cm} % 1 cm boşluk
+\textbf{Step1 ve Step2 Değerlerinin Hesabı:}
+  
+\vspace{0.5cm} % 1 cm boşluk
+ İlk artım değerleri formülü : Artim1 = 3 + k.2 ( k=0,1,2,3,4,5....)
+\vspace{0.5cm} % 1 cm boşluk
+  
+İkinci artım değerleri : 7 den başlanarak (+2,+6,+2,+6...) veya (Artim2= n*2 - Artim1) formüllerinden birisi ile elde edilebilir.
+  
+\begin{figure}[H]
+\centering
+\scalegraphics{anim1.png}
+\caption{Algoritma çalışma mantığı (Disk Gösterimi ile)}
+\label{fig:number-index}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalegraphics{5Pattern.png}
+\caption{(uint8 Bit Pattern) Oluşan Tekrarlı Desen}
+\label{fig:number-index}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalegraphics{5BitDuzeni.png}
+\caption{(1 + 5 patern) Oluşan Tekrarlı Desen}
+\label{fig:number-index}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalegraphics{7BitDuzeni.png}
+\caption{7 için (1 + 7 patern) Oluşan Tekrarlı Desen}
+\label{fig:number-index}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\scalegraphics{5x7BitDuzeni.png}
+\caption{5,7 için (1 + 5x7=35 patern) Oluşan Tekrarlı Desen}
+\label{fig:number-index}
+\end{figure}
+
+\subsubsection{Temel Algoritma (Yüksek Performanslı Sürüm)}
+\textbf{Girdi:} N (üst sınır) \\
+\textbf{Çıktı:} N’ye kadar tüm asal sayılar
+\begin{enumerate}
+    \item Bellek tahsisi: N/24 bit
+    \item Temel Asalların belirlenmesi (son limitin kareköküne kadar)
+    \item Başlangıç değerlerinin ayarlanması
+    \item Her asal adayı için:
+    \begin{enumerate}
+        \item Bileşik sayıların işaretlenmesi ve sayılması
+    \end{enumerate}
+    \item Kalan asal sayıların çıktılanması
+\end{enumerate}
+
+\subsubsection{Gelişmiş Algoritma (Teorik Sürüm)}
+\textbf{Girdi:} N (üst sınır) \\
+\textbf{Çıktı:} N’ye kadar tüm asal sayılar
+\begin{enumerate}
+    \item Bellek tahsisi: N/24 bit
+    \item Temel asalların belirlenmesi (son limitin kareköküne kadar)
+    \item Bit desenlerinin belirlenmesi
+    \item Paralel işlem için bloklara bölme
+    \item Her blok için optimize edilmiş bitwise eleme işlemleri
+    \item Sonuçların birleştirilmesi
+\end{enumerate}
+
+\subsection{Matematiksel Formülasyon}
+\begin{itemize}
+    \item \textbf{Aday Belirleme Formülü:} $n_k = 6k \pm 1, \quad k=1,2,3,\dots$
+    \item \textbf{Eleme Formülü:} $C_{ij} = (6i \pm 1)(6j \pm 1)$
+    \item \textbf{İndeks Hesaplama:} $\text{pos}(n) = \frac{n/2 - 1}{3}$
+\end{itemize}
+
+\section{Türk Eleği’nin Temel Özellikleri}
+\begin{enumerate}
+    \item Modüler aritmetik kullanmaz
+    \item Sadece toplama ve çarpma işlemleri kullanır
+    \item Bellek verimliliği: N/24 bit (1 milyarlık limit için ~39 MB)
+    \item Deterministik yapı
+    \item İki versiyon: Hız odaklı ve teorik odaklı
+    \item Paralelleştirme uyumu: CPU (OpenMP), GPU (CUDA/OpenCL)
+    \item Donanımla ölçeklenebilirlik: Yeni nesil GPU’larda tam kapasite hızlanır
+    \item Kuantum potansiyeli
+    \item IoT ve gömülü sistem uyumu
+    \item Matematik ve algoritma eğitimi için görselleştirme
+\end{enumerate}
+
+\section{Teorik Temeller ve Karmaşıklık}
+\begin{itemize}
+    \item Yöntem I (Hız Odaklı): c ≈ 1.015, $O(n^{1.015})$
+    \item Yöntem II (Teorik Odaklı): Bit desenleri ile lineer/sub-lineer
+    \item Bellek: N/24 bit
+    \item Deterministiklik: Probabilistik test içermez
+\end{itemize}
+
+\section{Donanım Uyumluluğu ve Uygulamalar}
+\begin{itemize}
+    \item CPU Paralelleştirme: OpenMP vb.
+    \item GPU Paralelleştirme: CUDA/OpenCL vb.
+    \item Büyük Sayılar: GMP entegrasyonu
+    \item Kuantum Potansiyel: Shor algoritmasına karşı direnç
+    \item IoT ve Gömülü Sistemler: Hızlı kripto sistemleri
+\end{itemize}
+
+\section{Sonuç ve Gelecek Çalışmalar}
+``Türk Eleği'' algoritması, klasik asal sayı yaklaşımlarının dışına çıkarak modüler aritmetik kullanmayan yeni bir metodoloji sunar. Düşük bellek kullanımı, yüksek performansı ve paralelleştirmeye uygun yapısı ile akademik ve endüstriyel uygulamalarda önemli bir potansiyele sahiptir.
+
+Gelecek çalışmalar:
+\begin{enumerate}
+    \item Algoritmanın daha da optimize edilmesi ve farklı donanım platformlarına entegrasyonu
+    \item İkiz asallar, Mersenne asalları gibi özel asalların belirlenmesi
+    \item Dağıtık sistemler için optimize edilmiş sürümler
+    \item Eğitsel yazılım araçları geliştirilmesi
+    \item İlişkili sayı teorisi problemlerine uygulanması
+    \item Kriptografik uygulamalar
+    \item Görselleştirme ve yayılım: YouTube videoları ile eğitim
+\end{enumerate}
+
+\section{Teşekkür}
+Türk matematikçilerinin tarihsel katkıları bu çalışmaya ilham kaynağı olmuştur. Katkıda bulunan tüm matematik ve bilgisayar bilimi emekçilerine teşekkür ederim.
+
+\section*{Lisans ve Kullanım}
+
+\textbf{Türk Eleği (Turkish Sieve) Algoritması} ve ilgili tüm materyaller, 
+\textbf{Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)} 
+lisansı altında lisanslanmıştır.
+
+\subsection*{İzin Verilen Kullanımlar}
+\begin{itemize}
+  \item Akademik araştırma, eğitim, kişisel ve deneysel çalışmalar için ücretsiz ve serbestçe kullanılabilir.
+  \item Algoritma veya ilgili materyaller, kaynak gösterilerek (Hüseyin Çakanlı, 2025) paylaşılabilir ve uyarlanabilir.
+\end{itemize}
+
+\subsection*{Kısıtlamalar}
+\begin{itemize}
+  \item Ticari kullanım (ticari yazılımlar, ürünler, hizmetler, gömülü sistemler vb.) bu lisans kapsamında yasaktır.
+  \item Ticari kullanım için özel lisans anlaşması yapılması gerekmektedir.
+\end{itemize}
+
+\subsection*{Ticari Lisans Talebi}
+Ticari lisanslama, işbirliği veya özel kullanım talepleri için iletişim:  
+\texttt{[e-posta adresinizi buraya yazınız]}
+
+\subsection*{Resmi Lisans Metni}
+Bu lisansın tam resmi metnine şu bağlantıdan ulaşılabilir:  
+\url{https://creativecommons.org/licenses/by-nc/4.0/legalcode}
+
+
+\section*{Referanslar}
+\begin{enumerate}
+    \item Eratosten, "Asal Sayıların Eleme Yöntemi", MÖ 3. yüzyıl
+    \item Atkin, A. O. L., \& Bernstein, D. J. (2004). "Prime sieves using binary quadratic forms". \textit{Mathematics of Computation}
+    \item Çakanlı, H. (2025). "Türk Eleği: Görselleştirme ve Eğitsel Materyaller". GitHub Repository
+    \item Çakanlı, H. (2025). "Türk Eleği" YouTube animasyonu
+    \item Sedgewick, R., \& Wayne, K. (2011). \textit{Algorithms}. Addison-Wesley Professional
+\end{enumerate}
+
+\end{document}
 

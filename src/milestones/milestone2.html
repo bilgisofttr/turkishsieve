@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>5-103 +2,+4 Animation</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    background: #f8f8f8;
+  }
+
+  #container {
+    position: relative;
+    width: 95%;
+  }
+
+  .row {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin: 4px 0;
+  }
+
+  .label-box {
+    width: 90px;
+    height: 42px;
+    border: 2px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 4px;
+    border-radius: 4px;
+    background-color: #eee;
+  }
+
+  .box {
+    flex: 1;
+    height: 40px;
+    border: 1px solid #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 1px;
+    border-radius: 3px;
+    background-color: #fff;
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .arrow-text {
+    font-size: 12px;
+    fill: red;
+    text-anchor: middle;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .arrow-path {
+    stroke: red;
+    stroke-width: 1.5;
+    fill: none;
+    marker-end: url(#arrowhead);
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 0.3s ease;
+  }
+</style>
+</head>
+<body>
+<div id="container">
+  <div class="row">
+    <div class="label-box">Numbers</div>
+    <div class="row" id="rowNumbers"></div>
+  </div>
+  <div class="row">
+    <div class="label-box">Index</div>
+    <div class="row" id="rowIndexes"></div>
+  </div>
+  <div class="row">
+    <div class="label-box">Is prime?</div>
+    <div class="row" id="rowBools"></div>
+  </div>
+  <svg id="svgLayer"></svg>
+</div>
+
+<script>
+const numbers = [];
+let val = 5;
+const diffs = [2,4];
+let i=0;
+while(val <=103){
+  numbers.push(val);
+  val += diffs[i%2];
+  i++;
+}
+numbers.push("...");
+
+// 1. SATIR: SAYILAR
+const rowNumbers = document.getElementById("rowNumbers");
+numbers.forEach(num=>{
+  const box = document.createElement("div");
+  box.className="box";
+  box.textContent = num;
+  rowNumbers.appendChild(box);
+});
+
+// 2. SATIR: INDEXLER (başta boş)
+const rowIndexes = document.getElementById("rowIndexes");
+numbers.forEach(num=>{
+  const box = document.createElement("div");
+  box.className="box";
+  box.textContent = "";
+  rowIndexes.appendChild(box);
+});
+
+// 3. SATIR: TRUE (başta boş)
+const rowBools = document.getElementById("rowBools");
+numbers.forEach(num=>{
+  const box = document.createElement("div");
+  box.className="box";
+  box.textContent = "";
+  rowBools.appendChild(box);
+});
+
+const svg = document.getElementById("svgLayer");
+svg.innerHTML=`
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4"
+      refX="6" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="red" />
+    </marker>
+  </defs>
+`;
+
+const boxes = document.querySelectorAll("#rowNumbers .box");
+const indexBoxes = document.querySelectorAll("#rowIndexes .box");
+const boolBoxes = document.querySelectorAll("#rowBools .box");
+
+function animateArrows() {
+  let delay = 0;
+  boxes.forEach((b,i)=>{
+    if(i >= boxes.length-1) return;
+    setTimeout(()=>{
+      const b1 = b.getBoundingClientRect();
+      const b2 = boxes[i+1].getBoundingClientRect();
+      const parentRect = document.getElementById("container").getBoundingClientRect();
+      const x1 = b1.left + b1.width/2 - parentRect.left;
+      const y1 = b1.top - parentRect.top;
+      const x2 = b2.left + b2.width/2 - parentRect.left;
+      const y2 = b2.top - parentRect.top;
+      const dx = (x2-x1)/2;
+      const dy = -18;
+
+      const path = document.createElementNS("http://www.w3.org/2000/svg","path");
+      path.setAttribute("d",`M ${x1} ${y1} Q ${x1+dx} ${y1+dy} ${x2} ${y2}`);
+      path.setAttribute("class","arrow-path");
+      svg.appendChild(path);
+
+      const text = document.createElementNS("http://www.w3.org/2000/svg","text");
+      text.setAttribute("x",x1+dx);
+      text.setAttribute("y",y1+dy-2);
+      text.setAttribute("class","arrow-text");
+      text.textContent = "+" + diffs[i%2];
+      svg.appendChild(text);
+
+      setTimeout(()=>{
+        path.style.strokeDashoffset = 0;
+        text.style.opacity = 1;
+      },50);
+
+    }, delay);
+    delay += 250;
+  });
+
+  // Index ve True yazdırma
+  let delay2 = delay + 300; 
+  indexBoxes.forEach((box, i)=>{
+    setTimeout(()=>{
+      box.textContent = (i === indexBoxes.length-1) ? "..." : i;
+    }, delay2);
+    delay2 += 150;
+  });
+
+  let delay3 = delay2 + 300;
+  boolBoxes.forEach((box, i)=>{
+    setTimeout(()=>{
+      box.textContent = (i === boolBoxes.length-1) ? "..." : "true";
+    }, delay3);
+    delay3 += 150;
+  });
+}
+
+window.onload = animateArrows;
+window.onresize = ()=>{
+  svg.innerHTML=`
+  <defs>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4"
+      refX="6" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="red" />
+    </marker>
+  </defs>`;
+  animateArrows();
+};
+</script>
+</body>
+</html>

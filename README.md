@@ -1,37 +1,12 @@
-# Turkish Sieve – A Novel Prime Sieving Algorithm
-
-## Introduction
-The Turkish Sieve is a newly developed algorithm for prime number detection 
-that does **not rely on modular arithmetic**.  
-It is lightweight, memory-efficient, and highly parallelizable.
-
-Key Features:
-- No modular arithmetic, only simple addition and multiplication.
-- Extremely low memory footprint (N/24 bits, ~39 MB per 1 billion numbers).
-- Parallelizable on CPU (OpenMP) and GPU (CUDA/OpenCL).
-- Scales with hardware – usable on GPUs, clusters, and potentially quantum computers.
-- Educationally friendly with simple visualization and animations.
-
-## Repository Structure
-- `src/` → Source code implementations
-- `examples/` → Simple usage demos and performance tests
-- `docs/` → Academic paper (LaTeX), figures, documentation
-
-## License
-This project is licensed under a **dual-license model**:
-- **Free** for academic, research, and non-commercial use.
-- **Commercial use requires a paid license.**
-
-See [LICENSE.md](./LICENSE.md) for details.
-
-For licensing inquiries:
-📧 Email: bilgisofttr@gmail.com
-
-## Citation
-If you use this algorithm in academic research, please cite:
-@misc{cakanli2025turkelegi,
-author = {Hüseyin ÇAKANLI},
-title = {Turkish Sieve: A Novel Prime Sieving Algorithm Without Modular Arithmetic},
-year = {2025},
-howpublished = {arXiv preprint},
-
+🚀 Turkish Sieve Engine (TSE) V.1.0.0Unique, Compact & Massive-Parallel Prime Discovery Engine📌 IntroductionTurkish Sieve Engine (TSE) is a revolutionary application that combines unprecedented computational efficiency, compact memory structures, and massive parallelization in prime number research. Based on the scientific methodology published on Zenodo (DOI: 10.5281/zenodo.18038661), TSE is a high-performance academic tool designed to detect twin primes, cousin primes, and prime gaps at massive scales ($10^{14}$ and beyond).📊 Key Metrics & AchievementsPeak Throughput: 339.4 Billion candidates/sec (measured on RTX 3070 @ $10^{12}$ range).Memory Efficiency: N/6 bit data structure (6x more compact than classical sieves).GPU Acceleration: Up to 11.0× speedup compared to multi-core CPUs in optimal ranges.Scientific Accuracy: 100% compliance with OEIS A007508 (Zero error margin for twin primes).💎 Why is TSE Unique?1. No Modular ArithmeticUnlike traditional sieving algorithms, TSE replaces expensive MOD/DIV operations with simple integer additions ($n \leftarrow n+p$). This hardware-friendly approach eliminates the heavy computational overhead of division in GPU/HPC architectures.2. Extreme Memory EfficiencyBy leveraging the mathematical structure of (p, p+2) and (p, p+4) pairs, the canonical N/3 bit sieve is reduced to an N/6 bit representation. This allows processing 100 trillion numbers ($10^{14}$) using only 1.1 GB of VRAM.3. Seamless Compactness & UI/UXNo Coding Required: A fully menu-driven, interactive interface for researchers.Smart Hardware Detection: Automatically analyzes system CPU and GPU specifications.Professional Reporting: Generates detailed performance metrics after every analysis.📝 Sample Performance Analysis ReportTSE generates detailed reports showing the architectural efficiency of the system:Plaintext==============================================================
+                PERFORMANCE ANALYSIS & REPORT
+==============================================================
+Range              : [0 - 1,000,000,000,000]
+Engine Type        : GPU Segmented Sieve (Cuda Parallel.)
+Device             : NVIDIA GeForce RTX 3070
+Total Process Time : 5s 510ms
+Throughput         : 181.488 G-items/s
+CUDA Occupancy     : %100.0 (Architectural Efficiency)
+TOTAL PAIRS FOUND  : 1,870,585,220
+==============================================================
+🚀 How to Use (Step-by-Step)1. System RequirementsGPU: NVIDIA CUDA Compute Capability 3.5+ (RTX/GTX Series).CPU: Intel/AMD x86-64 (with OpenMP support).OS: Windows 10/11 (Linux support coming soon).2. Running the ApplicationRun Tse_v100.exe.The app will automatically detect your hardware (Cores, Cache, GPU, VRAM).Select from the Main Menu:[1] GPU MODE: Uses the CUDA engine for maximum performance.[2] CPU MODE: Uses the multi-core statistical engine.Enter parameters: Start (N), End (M), and Prime Type (1: Twin, 2: Cousin).Once finished, press Y to save the results as a TSE_Report_[Date].txt file.📂 Repository Structuresrc/ → Source code implementations (CUDA & OpenMP).bin/ → Executable files (tse.exe).docs/ → Academic paper (Zenodo PDF), figures, and documentation.logs/ → Execution and performance logs.🔮 Roadmapv1.1.0 (2026 H2): Multi-GPU support (NVLink), GMP Integration (breaking the $2^{64}$ limit).v2.0.0+: Distributed computing (MPI), AI-optimized sieving patterns, and FPGA support.⚖️ Licensing & CitationAcademic Use: Free of charge with full capacity but time-limited access for researchers and the scientific community.Commercial Use: Subject to a licensing agreement for enterprise integration and commercial use.Citation: If you use this software in your research, please cite:H. Cakanli, "The Turkish Sieve Methodology: Deterministic Computation of Twin and Cousin Primes", Zenodo, 2026. DOI: 10.5281/zenodo.18038661Contact & Licensing: 📧 bilgisofttr@gmail.com🤝 Support and SponsorshipThis project aims for unprecedented computational efficiency. We welcome any hardware sponsorship (for high-capacity server testing and multi-vendor GPU development), donations, or technical suggestions. To contribute, please open an Issue on GitHub or contact us directly.

@@ -1,5 +1,6 @@
 # 🚀 Turkish Sieve Engine (TSE) V.1.0.0
 ### Unique, Compact & Massive-Parallel Prime Discovery Engine
+![GitHub stars](https://img.shields.io/github/stars/bilgisofttr/TurkishSieve?style=social)
 
 ## 📌 Introduction
 **Turkish Sieve Engine (TSE)** is a revolutionary application that combines unprecedented computational efficiency, compact memory structures, and massive parallelization in prime number research. Based on the scientific methodology published on Zenodo ([DOI: 10.5281/zenodo.18038661](https://doi.org/10.5281/zenodo.18038661)), TSE is the most efficient academic tool designed for the detection of primes, twin primes, and cousin primes **within any given range, including massive scales ($10^{14}$ and beyond).**

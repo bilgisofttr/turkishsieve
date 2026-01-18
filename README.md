@@ -32,17 +32,108 @@ The canonical $N/3$ bit sieve structure has been reduced to an **$N/6$ bit** rep
 TSE generates detailed reports showing the architectural efficiency of the system:
 
 ```text
+*************************** NEW REPORT ***********************
 ==============================================================
                 PERFORMANCE ANALYSIS & REPORT
+                     2026-01-17 15:11:49
 ==============================================================
-Range              : [0 - 1,000,000,000,000]
-Engine Type        : GPU Segmented Sieve (Cuda Parallel.)
-Device             : NVIDIA GeForce RTX 3070
-Total Process Time : 5s 510ms
-Throughput         : 181.488 G-items/s
-CUDA Occupancy     : %100.0 (Architectural Efficiency)
-TOTAL PAIRS FOUND  : 1,870,585,220
+ Engine Type        : GPU Segmented Sieve (Cuda Parallel.)
+ Device             : NVIDIA GeForce RTX 3070
+ Range Start        : 1
+ Range End          : 1,000,000,000,000
+ Type               : TWIN PRIME
+ Total Process Time : 5 s 510 ms
+ TOTAL PAIRS FOUND  : 1,870,585,220
+ --------------------------------------------------------------
+ Throughput         : 181.488 G-items/s
+ CUDA Occupancy     : %83.3 (Architectural Efficiency)
+ Speed (Decimal)    : 181488.203 Million/s
+ Speed (Binary)     : 173080.638 Mi/s
+ System RAM Usage   : 281 MB
+ GPU VRAM Usage     : 1127 MB
+ --------------------------------------------------------------
+ >> 181,488,203,266 numbers checked per second
+===============================================================
+This report is the result of the TSE V.1.0.0 application.
+************************** END OF REPORT **********************
+
+*************************** NEW REPORT ***********************
 ==============================================================
+                PERFORMANCE ANALYSIS & REPORT
+                     2026-01-17 15:54:30
+==============================================================
+ Engine Type        : GPU Segmented Sieve (Cuda Parallel.)
+ Device             : NVIDIA GeForce RTX 3070
+ Range Start        : 1
+ Range End          : 100,000,000,000,000
+ Type               : TWIN PRIME
+ Total Process Time : 2264 s 706 ms
+ TOTAL PAIRS FOUND  : 135,780,321,665
+ --------------------------------------------------------------
+ Throughput         : 44.156 G-items/s
+ CUDA Occupancy     : %83.3 (Architectural Efficiency)
+ Speed (Decimal)    : 44155.842 Million/s
+ Speed (Binary)     : 42110.292 Mi/s
+ System RAM Usage   : 314 MB
+ GPU VRAM Usage     : 1145 MB
+ --------------------------------------------------------------
+ >> 44,155,841,862 numbers checked per second
+===============================================================
+This report is the result of the TSE V.1.0.0 application.
+************************** END OF REPORT **********************
+
+*************************** NEW REPORT ***********************
+==============================================================
+                PERFORMANCE ANALYSIS & REPORT
+                     2026-01-17 19:49:20
+==============================================================
+ Engine Type        : GPU Segmented Sieve (Cuda Parallel.)
+ Device             : NVIDIA GeForce GTX 1650 Ti
+ Range Start        : 1000000000000000
+ Range End          : 1,001,000,000,000,000
+ Type               : TWIN PRIME
+ Total Process Time : 348 s 447 ms
+ TOTAL PAIRS FOUND  : 1,106,775,692
+ --------------------------------------------------------------
+ Throughput         : 2.870 G-items/s
+ CUDA Occupancy     : %100.0 (Architectural Efficiency)
+ Speed (Decimal)    : 2869.877 Million/s
+ Speed (Binary)     : 2736.928 Mi/s
+ System RAM Usage   : 279 MB
+ GPU VRAM Usage     : 886 MB
+ --------------------------------------------------------------
+ >> 2,869,876,910 numbers checked per second
+===============================================================
+This report is the result of the TSE V.1.0.0 application.
+************************** END OF REPORT **********************
+
+*************************** NEW REPORT ***********************
+==============================================================
+                PERFORMANCE ANALYSIS & REPORT
+                     2026-01-17 05:05:49
+==============================================================
+ Engine Type        : CPU Multi-Core Segmented (OMP Parallel.)
+ Device             : Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+ Range Start        : 0
+ Range End          : 100,000,000,000
+ Type               : COUSIN PRIME
+ Total Process Time : 12 s 177 ms
+ TOTAL PAIRS FOUND  : 224,373,161
+ --------------------------------------------------------------
+ Throughput         : 8.212 G-items/s
+ Compute Strategy   : High-Throughput Mode
+ Speed (Decimal)    : 8212.203 Million/s
+ Speed (Binary)     : 7831.767 Mi/s
+ System RAM Usage   : 150 MB
+ GPU VRAM Usage     : 0 MB
+ --------------------------------------------------------------
+ >> 8,212,203,334 numbers checked per second
+===============================================================
+This report is the result of the TSE V.1.0.0 application.
+************************** END OF REPORT **********************
+
+
+
 ```
 ## 🚀 How to Use (Step-by-Step)
 ### System Requirements

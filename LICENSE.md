@@ -25,7 +25,7 @@ Any use of this software in commercial products, services, internal corporate en
 * A valid license must be obtained directly from the copyright holder.
 * Commercial use without a signed agreement is a violation of international copyright laws.
 
-**For licensing inquiries and fee agreements, please contact:** 📧 **Email:** bilgisofttr@gmail.com  
+**For licensing inquiries and fee agreements, please contact:** 📧 **Email:** bilgisoft.tr@gmail.com  
 👤 **Author:** Hüseyin ÇAKANLI
 
 ---

@@ -4,7 +4,7 @@ authors:
   - family-names: "ÇAKANLI"
     given-names: "Hüseyin"
     affiliation: "Independent Researcher"
-    email: "bilgisofttr@gmail.com"
+    email: "bilgisoft.tr@gmail.com"
 title: "The Turkish Sieve Methodology: Deterministic Computation of Twin and Cousin Prime Pairs Using an N/6 Bit Data Structure"
 version: 1.0.0
 doi: 10.5281/zenodo.18038661

@@ -1,9 +1,22 @@
 cff-version: 1.2.0
-title: "Turkish Sieve: A Novel Prime Sieving Algorithm Without Modular Arithmetic"
+message: "If you use this software in your research, please cite it using the following metadata."
 authors:
-  - family-names: "Çakanlı"
+  - family-names: "ÇAKANLI"
     given-names: "Hüseyin"
-date-released: 2025-09-18
-doi: "10.48550/arXiv.placeholder"
-license: "Dual License (Non-commercial + Commercial)"
-version: "1.0.0"
+    affiliation: "Independent Researcher"
+    email: "bilgisofttr@gmail.com"
+title: "The Turkish Sieve Methodology: Deterministic Computation of Twin and Cousin Prime Pairs Using an N/6 Bit Data Structure"
+version: 1.0.0
+doi: 10.5281/zenodo.18038661
+date-released: 2026-01-18
+url: "https://github.com/bilgisofttr/TurkishSieveEngine"
+repository-code: "https://github.com/bilgisofttr/TurkishSieveEngine"
+keywords:
+  - "Prime Numbers"
+  - "Twin Primes"
+  - "Cousin Primes"
+  - "Sieve Methodology"
+  - "N/6 Bit Structure"
+  - "High Performance Computing"
+  - "CUDA"
+abstract: "A novel, memory-efficient prime sieving algorithm that operates without modular arithmetic, specifically optimized for twin and cousin prime detection using a compact N/6 bit data representation."

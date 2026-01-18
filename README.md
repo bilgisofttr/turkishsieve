@@ -75,7 +75,7 @@ The application will automatically detect your hardware (Cores, Cache, GPU, VRAM
 We aim to build a comprehensive performance database across different hardware architectures. You can contribute to the development and scientific validation of the **Turkish Sieve Engine**:
 
 1. **Submit Your Benchmarks:** If you run a test and select the **"Save Results (Y)"** option, the application will automatically generate an `analysis_log.rtf` (performance metrics) and an `engine_config.txt` (hardware/system specs). 
-   * Please email these two files to **bilgisofttr@gmail.com** along with your name or nickname. 
+   * Please email these two files to **bilgisoft.tr@gmail.com** along with your name or nickname. 
    * We will publish verified results in our official **Global Benchmark Table** to showcase how TSE performs on various GPUs and CPUs worldwide.
 
 2. **Star the Project:** If you are a researcher, academic, or enthusiast using this engine, please consider **giving this repository a Star (⭐)**. Your support helps increase the project's visibility in the scientific community and encourages further development of the N/6 bit methodology.
@@ -111,7 +111,7 @@ H. Cakanli, "The Turkish Sieve Methodology: Deterministic Computation of Twin an
 
 DOI: 10.5281/zenodo.18038661
 
-### Contact & Licensing: 📧 bilgisofttr@gmail.com
+### Contact & Licensing: 📧 bilgisoft.tr@gmail.com
 
 ## 🤝 Support and Sponsorship
 

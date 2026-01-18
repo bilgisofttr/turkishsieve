@@ -7,7 +7,11 @@
 
 
 ## 📌 Introduction
-**Turkish Sieve Engine (TSE)** is a revolutionary application that combines unprecedented computational efficiency, compact memory structures, and massive parallelization in prime number research. Based on the scientific methodology published on Zenodo ([DOI: 10.5281/zenodo.18038661](https://doi.org/10.5281/zenodo.18038661)) TSE is the most efficient academic tool designed for the detection of primes, twin primes, and cousin primes **within any given range, including massive scales ($10^{14}$ and beyond).**
+**Turkish Sieve Engine (TSE)** is a revolutionary application that combines unprecedented computational efficiency, compact memory structures, and massive parallelization in prime number research.
+
+Based on the scientific methodology published on Zenodo ([DOI: 10.5281/zenodo.18038661](https://doi.org/10.5281/zenodo.18038661))
+
+TSE is the most efficient academic tool designed for the detection of primes, twin primes, and cousin primes **within any given range, including massive scales ($10^{14}$ and beyond) .**
 
 ## 📊 Key Metrics & Achievements
 * **Peak Throughput:** 339.4 Billion candidates/sec (measured on RTX 3070 @ $10^{12}$ range).
@@ -21,10 +25,12 @@
 ## 💎 Why is TSE Unique?
 
 ### 1. No Modular Arithmetic
-Unlike traditional sieving algorithms, TSE replaces expensive MOD/DIV operations with simple integer additions ($n \leftarrow n+p$). This hardware-friendly approach eliminates the heavy computational overhead of division in GPU/HPC architectures.
+Unlike traditional sieving algorithms, TSE replaces expensive MOD/DIV operations with simple integer additions **(n <- n+p)**. 
+
+This hardware-friendly approach eliminates the heavy computational overhead of division in GPU/HPC architectures.
 
 ### 2. Extreme Memory Efficiency
-The canonical $N/3$ bit sieve structure has been reduced to an **$N/6$ bit** representation by leveraging the mathematical nature of $(p, p+2)$ and $(p, p+4)$ pairs. This allows processing 100 trillion numbers ($10^{14}$) using only **1.1 GB of VRAM**.
+The canonical $N/3$ bit sieve structure has been reduced to an **$N/6$ bit** representation by leveraging the mathematical nature of $(p, p+2)$ and $(p, p+4)$ pairs. This allows processing 100 trillion numbers ( for $10^{14}$) using only **1.1 GB of VRAM**.
 
 ### 3. Seamless Compactness & UI/UX
 * **No Coding Knowledge Required:** A fully menu-driven, interactive interface for researchers.
@@ -162,7 +168,7 @@ The application will automatically detect your hardware (Cores, Cache, GPU, VRAM
 
 * **Enter Parameters:** Start (N), End (M), and Prime Type (1: Twin, 2: Cousin).
 
-* **Once the analysis is complete,** press the Y key to save the results as **TSE_Report_[Date].txt.**
+* **Once the analysis is complete,** press the Y key to save the results as **analysis_log.rtf**
 
 ---
 
@@ -176,9 +182,8 @@ We aim to build a comprehensive performance database across different hardware a
 2. **Star the Project:** If you are a researcher, academic, or enthusiast using this engine, please consider **giving this repository a Star (⭐)**. Your support helps increase the project's visibility in the scientific community and encourages further development of the N/6 bit methodology.
 
 ## 📂 Repository Structure
-* **src/** → Source code implementations (CUDA & OpenMP).
 
-* **bin/** → Executable files (tse.exe).
+* **bin/** → Executable files.
 
 * **docs/** → Academic paper (Zenodo PDF), figures, and documentation.
 
@@ -186,13 +191,13 @@ We aim to build a comprehensive performance database across different hardware a
 
 ## 🔮 Roadmapv1.1.0 (2026 H2): 
 
-Multi-GPU support (NVLink), GMP Integration (breaking the $2^{64}$ limit).
+Multi-GPU support (NVLink), GMP Integration (after the $2^{64}$ limit).
 
 v2.0.0+: Distributed computing (MPI), AI-optimized sieving patterns, and FPGA support.
 
 ## ⚖️ Licensing & CitationAcademic Use: 
 
-### Free of charge with full capacity but time-limited access for researchers and the scientific community.
+### Free of charge with full capacity but time-limited (1 hour) access for researchers and the scientific community.
 
 ### Commercial Use: 
 Subject to a licensing agreement for enterprise integration and commercial use.

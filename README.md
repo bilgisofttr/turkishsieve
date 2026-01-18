@@ -1,6 +1,7 @@
-# 🚀 Turkish Sieve Engine (TSE) V.1.0.0
+# 🚀 Turkish Sieve Engine (TSE) V.1.0.0 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038661.svg)](https://doi.org/10.5281/zenodo.18038661)
 ### Unique, Compact & Massive-Parallel Prime Discovery Engine
 ![GitHub stars](https://img.shields.io/github/stars/bilgisofttr/TurkishSieve?style=social)
+
 
 ## 📌 Introduction
 **Turkish Sieve Engine (TSE)** is a revolutionary application that combines unprecedented computational efficiency, compact memory structures, and massive parallelization in prime number research. Based on the scientific methodology published on Zenodo ([DOI: 10.5281/zenodo.18038661](https://doi.org/10.5281/zenodo.18038661)), TSE is the most efficient academic tool designed for the detection of primes, twin primes, and cousin primes **within any given range, including massive scales ($10^{14}$ and beyond).**
@@ -196,13 +197,36 @@ Subject to a licensing agreement for enterprise integration and commercial use.
 ### Details: 
 See the LICENSE.md file for more information.
 
-## Citation: 
-### If you use this software in your research, please cite:
-H. Cakanli, "The Turkish Sieve Methodology: Deterministic Computation of Twin and Cousin Primes", Zenodo, 2026. 
+## ⚖️ Citation
+---
+If you use the **Turkish Sieve Engine** or the **N/6 Bit Methodology** in your research, please cite the original work using the following format:
+
+### APA Style
+> ÇAKANLI, H. (2025). *The Turkish Sieve Methodology: Deterministic Computation of Twin and Cousin Prime Pairs Using an N/6 Bit Data Structure* (V.1.0.0). Zenodo. https://doi.org/10.5281/zenodo.18038661
+
+---
+
+### 💡 Other Styles (BibTeX, RIS, MLA, etc.)
+You can export this citation in various formats directly from the official Zenodo page:
+👉 [View and Export Citations on Zenodo](https://doi.org/10.5281/zenodo.18038661)
 
 DOI: 10.5281/zenodo.18038661
 
 ### Contact & Licensing: 📧 bilgisoft.tr@gmail.com
+
+## 🔬 Academic Metadata & Publication Details
+
+The methodology behind this engine is formally documented as a scientific preprint. Below are the official publication details:
+
+* **Document Title:** The Turkish Sieve Methodology: Deterministic Computation of Twin and Cousin Prime Pairs Using an N/6 Bit Data Structure
+* **Persistent Identifier (DOI):** [10.5281/zenodo.18038661](https://doi.org/10.5281/zenodo.18038661) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038661.svg)](https://doi.org/10.5281/zenodo.18038661)
+* **Resource Type:** Preprint (Scientific Paper)
+* **Publisher:** Zenodo
+* **Primary Language:** English
+* **Release Date:** 2025
+
+---
+
 
 ## 🤝 Support and Sponsorship
 

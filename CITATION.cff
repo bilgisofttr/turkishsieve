@@ -9,8 +9,8 @@ title: "The Turkish Sieve Methodology: Deterministic Computation of Twin and Cou
 version: 1.0.0
 doi: 10.5281/zenodo.18038661
 date-released: 2026-01-18
-url: "https://github.com/bilgisofttr/TurkishSieveEngine"
-repository-code: "https://github.com/bilgisofttr/TurkishSieveEngine"
+url: "https://github.com/bilgisofttr/TurkishSieve"
+repository-code: "https://github.com/bilgisofttr/TurkishSieve"
 keywords:
   - "Prime Numbers"
   - "Twin Primes"

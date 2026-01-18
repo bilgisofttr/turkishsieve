@@ -89,7 +89,7 @@ This report is the result of the TSE V.1.0.0 application.
 ==============================================================
  Engine Type        : GPU Segmented Sieve (Cuda Parallel.)
  Device             : NVIDIA GeForce GTX 1650 Ti
- Range Start        : 1000000000000000
+ Range Start        : 1,000,000,000,000,000
  Range End          : 1,001,000,000,000,000
  Type               : TWIN PRIME
  Total Process Time : 348 s 447 ms

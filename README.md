@@ -14,7 +14,7 @@ Based on the scientific methodology published on Zenodo ([DOI: 10.5281/zenodo.18
 TSE is the most efficient academic tool designed for the detection of primes, twin primes, and cousin primes **within any given range, including massive scales ($10^{14}$ and beyond) .**
 
 ## 📊 Key Metrics & Achievements
-* **Peak Throughput:** 339.4 Billion candidates/sec (measured on RTX 3070 @ $10^{12}$ range).
+* **Peak Throughput:** 181.5 Billion candidates/sec (measured on RTX 3070 @ $10^{12}$ range).
 * **Memory Efficiency:** **N/6 bit** data structure (6x more compact than classical sieves).
 * **GPU Acceleration:** Up to **11.0× speedup** compared to multi-core CPUs in optimal ranges.
 * **Scientific Accuracy:** 100% compliance with **OEIS A007508** (Zero error margin for twin&cousin primes).

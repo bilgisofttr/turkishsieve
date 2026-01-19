@@ -165,6 +165,15 @@ Run Tse_v100.exe.
 
 The application will automatically detect your hardware (Cores, Cache, GPU, VRAM).
 
+## Security & VirusTotal Scan
+
+**TSE_v100.exe** scanned on VirusTotal (70+ engines):  
+**Clean & Safe** – 0 detections (no threats found)  
+
+[View full report](https://www.virustotal.com/gui/file/041b8984563be0133e9cfed872df9740ca6bf2749ad59366f85216b6bd705afb/detection)  
+SHA256: 041b8984563be0133e9cfed872df9740ca6bf2749ad59366f85216b6bd705afb  
+(Scanned: January 19, 2026)
+
 ### Select from the Main Menu: 
 
 * **[1] GPU MODE:** Uses the CUDA engine for maximum performance.

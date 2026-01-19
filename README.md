@@ -199,11 +199,6 @@ Example leaderboard files:
 - [0 – 1e14 Cousins Leaderboards](./user-benchmarks/cousin-primes/Gpu(cuda)/0-1e14.md)
 - and more ranges as data arrives…
 
-Example leaderboard files:
-- [0 – 10⁹](./User%20Benchmarks/Twin Primes/0-1e14.md)
-- [10⁹ – 10¹⁰](./User%20Benchmarks/Cousin Primes/0-1e14.md)
-- and more ranges as data arrives…
-
 ### Other Ways to Support the Project
 
 - **Star the Repository** ⭐  
@@ -225,9 +220,9 @@ Questions? Just open an issue or reply on X. Let's build this together! 🚀
 * **docs/** → All importand files, figures, and documentation.
 
 
-## 🔮 Roadmapv1.1.0 (2026 H2): 
+## 🔮 Roadmap
 
-Multi-GPU support (NVLink), GMP Integration (after the $2^{64}$ limit).
+v1.1.0 (2026 H2): Multi-GPU support (NVLink), GMP Integration (after the $2^{64}$ limit).
 
 v2.0.0+: Distributed computing (MPI), AI-optimized sieving patterns, and FPGA support.
 

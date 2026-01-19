@@ -195,7 +195,7 @@ We will:
 - Give shoutouts to top performers on X (@turkishsieve) and in the repository
 
 Example leaderboard files:
-- [0 – 1e14 Twins Leaderboards  ](./user-benchmarks/twin-primes/Gpu(Cuda)/0-1e14.md)
+- [0 – 1e14 Twins Leaderboards](./user-benchmarks/twin-primes/Gpu(Cuda)/0-1e14.md)
 - [0 – 1e14 Cousins Leaderboards](./user-benchmarks/cousin-primes/Gpu(Cuda)/0-1e14.md)
 - and more ranges as data arrives…
 
@@ -218,7 +218,7 @@ Questions? Just open an issue or reply on X. Let's build this together! 🚀
 
 ## 📂 Repository Structure
 
-* **User Benchmarks/** → Last users scor tables.
+* **user-benchmarks/** → Last users scor tables.
  
 * **bin/** → Executable files.
 

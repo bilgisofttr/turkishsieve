@@ -1,4 +1,4 @@
-[![Download TSE ZIP](https://img.shields.io/github/downloads/bilgisofttr/turkishsieve/v1.0.0/TSE_v1.0.0_Windows.zip?color=blue&style=for-the-badge&logo=github)](https://github.com/bilgisofttr/turkishsieve/releases/tag/v1.0.0)
+[![Download TSE ZIP](https://img.shields.io/github/downloads/bilgisofttr/turkishsieve/v1.0.0/TSE_V100_x64.zip?color=blue&style=for-the-badge&logo=github)](https://github.com/bilgisofttr/turkishsieve/releases/tag/v1.0.0)
 
 
 # 🚀 Turkish Sieve Engine (TSE) V.1.0.0 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038661.svg)](https://doi.org/10.5281/zenodo.18038661)
@@ -158,7 +158,7 @@ This report is the result of the TSE V.1.0.0 application.
 
 Get the pre-built Windows executable (ZIP package) from the latest release:
 
-[![Download TSE ZIP](https://img.shields.io/github/downloads/bilgisofttr/turkishsieve/v1.0.0/TSE_v1.0.0_Windows.zip?color=blue&style=for-the-badge&logo=github)](https://github.com/bilgisofttr/turkishsieve/releases/tag/v1.0.0)
+[![Download TSE ZIP](https://img.shields.io/github/downloads/bilgisofttr/turkishsieve/v1.0.0/TSE_V100_x64.zip?color=blue&style=for-the-badge&logo=github)](https://github.com/bilgisofttr/turkishsieve/releases/tag/v1.0.0)
 Or visit the [Releases page](https://github.com/bilgisofttr/turkishsieve/releases) directly.
 
 Run Tse_v100.exe.

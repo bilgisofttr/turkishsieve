@@ -1,4 +1,4 @@
-[![Download TSE](https://img.shields.io/badge/Download-TSE_v1.0.0-blue?style=for-the-badge&logo=github)](https://github.com/bilgisofttr/turkishsieve/releases/latest)
+[![Download TSE ZIP](https://img.shields.io/github/downloads/bilgisofttr/turkishsieve/v1.0.0/TSE_v1.0.0_Windows.zip?color=blue&style=for-the-badge&logo=github)](https://github.com/bilgisofttr/turkishsieve/releases/tag/v1.0.0)
 
 
 # 🚀 Turkish Sieve Engine (TSE) V.1.0.0 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038661.svg)](https://doi.org/10.5281/zenodo.18038661)

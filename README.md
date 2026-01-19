@@ -172,22 +172,58 @@ The application will automatically detect your hardware (Cores, Cache, GPU, VRAM
 
 ---
 
-## 📊 Global Benchmarking & Contribution
-We aim to build a comprehensive performance database across different hardware architectures. You can contribute to the development and scientific validation of the **Turkish Sieve Engine**:
+## 📊 Global Benchmarking & Community Contributions
 
-1. **Submit Your Benchmarks:** If you run a test and select the **"Save Results (Y)"** option, the application will automatically generate an `analysis_log.rtf` (performance metrics) and an `engine_config.txt` (hardware/system specs). 
-   * Please email these two files to **bilgisoft.tr@gmail.com** along with your name or nickname. 
-   * We will publish verified results in our official **Global Benchmark Table** to showcase how TSE performs on various GPUs and CPUs worldwide.
+We are building a comprehensive, community-driven performance database to showcase how the **Turkish Sieve Engine (TSE)** performs across different hardware architectures (consumer GPUs, high-end workstations, multi-core CPUs, etc.).
 
-2. **Star the Project:** If you are a researcher, academic, or enthusiast using this engine, please consider **giving this repository a Star (⭐)**. Your support helps increase the project's visibility in the scientific community and encourages further development of the N/6 bit methodology.
+Your contributions help scientifically validate the N/6 bit methodology, mirror symmetry optimizations, and overall efficiency gains — especially at scales beyond 1e09.
+
+### How to Contribute Your Benchmarks
+
+1. Run any test range in TSE.
+2. When prompted, select **"Save Results (Y)"**.
+3. The application will automatically generate two key files:
+   - `analysis_log.rtf` — detailed performance metrics (throughput, runtime, candidates/sec, etc.)
+   - `engine_config.txt` — your hardware & system specs (CPU, GPU VRAM, CUDA version, OS, etc.)
+4. Email both files to: **bilgisoft.tr@gmail.com**  
+   Include your preferred **name/nickname** (or "anonymous" if you wish to stay private) in the email body.
+
+We will:
+- Verify the results for consistency and validity
+- Add your entry to the public **Global Benchmark Leaderboards** in the [`User Benchmarks`](./User%20Benchmarks/) folder
+- Rank entries by average time (fastest at the top) within each range
+- Give shoutouts to top performers on X (@turkishsieve) and in the repository
+
+Example leaderboard files:
+- [0 – 1e14 Twins Leaderboards  ](./User%20Benchmarks/Twin%20Primes/0-1e14.md)
+- [0 – 1e14 Cousins Leaderboards](./User%20Benchmarks/Cousin%20Primes/0-1e14.md)
+- and more ranges as data arrives…
+
+Example leaderboard files:
+- [0 – 10⁹](./User%20Benchmarks/Twin Primes/0-1e14.md)
+- [10⁹ – 10¹⁰](./User%20Benchmarks/Cousin Primes/0-1e14.md)
+- and more ranges as data arrives…
+
+### Other Ways to Support the Project
+
+- **Star the Repository** ⭐  
+  If you're a researcher, student, developer or enthusiast using TSE, please give the repo a star. It significantly increases visibility in the scientific and open-source communities and motivates continued development of the N/6 bit approach.
+
+- **Share Your Experience**  
+  Post your results, questions or suggestions on GitHub Discussions, Issues, or X (@turkishsieve). Community feedback directly shapes future releases.
+
+Thank you in advance to everyone who contributes — your runs are helping push the boundaries of deterministic prime-pair sieving on consumer hardware!
+
+Questions? Just open an issue or reply on X. Let's build this together! 🚀
 
 ## 📂 Repository Structure
 
+* **User Benchmarks/** → Last users scor tables.
+ 
 * **bin/** → Executable files.
 
-* **docs/** → Academic paper (Zenodo PDF), figures, and documentation.
+* **docs/** → All importand files, figures, and documentation.
 
-* **logs/** → Execution and performance logs.
 
 ## 🔮 Roadmapv1.1.0 (2026 H2): 
 

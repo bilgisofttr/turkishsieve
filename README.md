@@ -112,7 +112,7 @@ TSE generates detailed reports showing the architectural efficiency of the syste
 ==============================================================
  Engine Type        : GPU Segmented Sieve (Cuda Parallel.)
  Device             : NVIDIA GeForce RTX 5090
- Range Start        : 1
+ Range Start        : 0
  Range End          : 1,000,000,000,000
  Type               : COUSIN PRIME
  Total Process Time : 0 s 880 ms
@@ -139,7 +139,7 @@ This report is the result of the TSE V.2.0.0 application.
 ==============================================================
  Engine Type        : GPU Segmented Sieve (Cuda Parallel.)
  Device             : NVIDIA GeForce RTX 5090
- Range Start        : 1
+ Range Start        : 0
  Range End          : 100,000,000,000,000
  Type               : TWIN PRIME
  Total Process Time : 359 s 341 ms
@@ -166,7 +166,7 @@ This report is the result of the TSE V.2.0.0 application.
 ==============================================================
  Engine Type        : CPU Multi-Core Segmented (OMP Parallel.)
  Device             : AMD Ryzen 9 9950X3D (32 Threads)
- Range Start        : 1
+ Range Start        : 0
  Range End          : 1,000,000,000
  Type               : TWIN PRIME
  Total Process Time : 0 s 015 ms

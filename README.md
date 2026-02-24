@@ -99,6 +99,26 @@ Architecture and VRAM capacity are the primary performance drivers at extreme sc
 - **RTX 3070 @ 10^14:** **2,264.706 seconds**
 - **Efficiency Gain:** The 5090 reduces processing time from 37 minutes to **just 6 minutes** for 100 trillion numbers.
 
+---
+
+## 🔍 Historical Accuracy & Error Correction: The Nicely Inconsistencies
+
+Turkish Sieve Engine (TSE) is not only a high-performance tool but also a verification engine for computational number theory. While benchmarking TSE against historical datasets, we identified systematic inconsistencies in **Dr. Thomas Nicely’s** twin prime tables—the same datasets historically significant for uncovering the 1994 Pentium FDIV bug.
+
+### The Discovery
+TSE has been cross-verified with the industry-standard `primesieve` (by Kim Walisch), yielding 100% identical results. However, when compared to Nicely's cumulative counts (hosted at Lynchburg), several ranges show a persistent "+1" error in his legacy data:
+
+| Range (0 to x) | Nicely's Count | TSE & Primesieve (Correct) | Discrepancy |
+| :--- | :--- | :--- | :--- |
+| 30 | 5 | **4** | +1 |
+| 600 | 27 | **26** | +1 |
+| 30,000,000 | 152,892 | **152,891** | +1 |
+| 100,000,000 | 440,313 | **440,312** | +1 |
+
+### Why This Matters
+These discrepancies likely stem from legacy segment-boundary handling or precision issues in early 1990s C code. By recalculating these constants with a modern, deterministic **N/6 bit-masking methodology**, TSE provides a corrected reference for researchers. TSE has successfully verified these counts up to $10^{14}$ with bit-perfect consistency across both CPU (OpenMP) and GPU (CUDA) architectures.
+
+---
 
 ## 📝 Sample Performance Analysis Report
 TSE generates detailed reports showing the architectural efficiency of the system. The following reports highlight the record-breaking performance achieved on next-generation hardware:

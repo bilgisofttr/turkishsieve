@@ -11,6 +11,27 @@ Based on the scientific methodology published on Zenodo ([DOI: 10.5281/zenodo.18
 
 TSE is the most efficient academic tool designed for the detection of primes, twin primes, and cousin primes **within any given range, including massive scales ($10^{14}$ and beyond) .**
 
+## 📢 **Latest News & Upcoming Features**
+
+### 📊 **Extended Statistics Now Available!**
+We have published detailed distribution tables for primes and prime pairs up to the **$10^{14}$** scale. These tables provide a deterministic reference for researchers and verify the accuracy of the **TSE N/6 bit methodology**.
+
+* [**Twin Prime Statistics**](./twinStatistics.md) – Detailed counts and last pair records.
+* [**Cousin Prime Statistics**](./cousinStatistics.md) – Detailed counts and last pair records.
+* [**General Prime Statistics**](./primesStatistics.md) – Comprehensive enumeration data.
+
+---
+
+### 🛠️ **Roadmap: Version 2.0.0 is Under Development!**
+The next generation of the **Turkish Sieve Engine** is currently being optimized. **Version 2.0.0** will be a major milestone in the project's evolution:
+
+* ✨ **General Prime Discovery:** Unlike Version 1.0 (which focuses on Twin and Cousin pairs), **V2.0.0 will include full support for detecting and enumerating General Primes**, providing a complete prime discovery suite.
+* 🚀 **Multi-GPU & Performance:** Enhanced CUDA kernels designed for **multi-GPU configurations** and even deeper memory optimizations to push the boundaries of throughput.
+* 📦 **Standalone Executable:** V2.0.0 will be released as a highly optimized **standalone .exe file**, making massive-scale research accessible to all researchers without complex environment setups.
+
+> **Status:** 🏗️ **Optimization in progress. Stay tuned for the official release!**
+
+
 ## 📊 Key Metrics & Achievements
 * **Peak Throughput:** 1,136 Trilyon candidates/sec (measured on RTX 5090 @ $10^{12}$ range).
 * **Memory Efficiency:** **N/6 bit** data structure (6x more compact than classical sieves).

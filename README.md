@@ -140,7 +140,7 @@ TSE has been cross-verified with the industry-standard `primesieve` (by Kim Wali
 ### Why This Matters
 These discrepancies likely stem from legacy segment-boundary handling or precision issues in early 1990s C code. By recalculating these constants with a modern, deterministic **N/6 bit-masking methodology**, TSE provides a corrected reference for researchers. TSE has successfully verified these counts up to $10^{14}$ with bit-perfect consistency across both CPU (OpenMP) and GPU (CUDA) architectures.
 
-After ~4.65e14 (464 trillion), the dataset appears to remain consistently offset by +1 for all subsequent values. In other words, once the error occurs, every later cumulative count continues with the same shift.
+After ~4.65e14 (465 trillion), the dataset appears to remain consistently offset by +1 for all subsequent values. In other words, once the error occurs, every later cumulative count continues with the same shift.
 
 ---
 

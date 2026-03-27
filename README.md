@@ -137,7 +137,7 @@ TSE has been cross-verified with the industry-standard `primesieve` (by Kim Wali
 | 100,000,000 | 440,313 | **440,312** | +1 |
 | 465,000,000,000,000 | 573,363,952,380 | **573,363,952,379** | +1 |
 | 525,000,000,000,000 | 642,563,148,734 | **642,563,148,732** | +2 |
-| 732,000,000,000,000 | 867,878,285,690 | **867,878,285,687** | +3 |
+| 723,000,000,000,000 | 867,878,285,690 | **867,878,285,687** | +3 |
 
 ### Why This Matters
 These discrepancies likely stem from legacy segment-boundary handling or precision issues in early 1990s C code. By recalculating these constants with a modern, deterministic **N/6 bit-masking methodology**, TSE provides a corrected reference for researchers. TSE has successfully verified these counts up to $10^{14}$ with bit-perfect consistency across both CPU (OpenMP) and GPU (CUDA) architectures.

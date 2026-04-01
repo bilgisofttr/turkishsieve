@@ -14,7 +14,7 @@ TSE is the most efficient academic tool designed for the detection of primes, tw
 ## 📢 **Latest News & Upcoming Features**
 
 ### 📊 **Extended Statistics Now Available!**
-We have published detailed distribution tables for primes and prime pairs up to the **$10^{14}$** scale. These tables provide a deterministic reference for researchers and verify the accuracy of the **TSE N/6 bit methodology**.
+We have published detailed distribution tables for primes and prime pairs up to the **$10^{15}$** scale. These tables provide a deterministic reference for researchers and verify the accuracy of the **TSE N/6 bit methodology**.
 
 * [**Twin Prime Statistics**](./twinStatistics.md) – Detailed counts and last pair records.
 * [**Cousin Prime Statistics**](./cousinStatistics.md) – Detailed counts and last pair records.
@@ -141,7 +141,7 @@ TSE has been cross-verified with the industry-standard `primesieve` (by Kim Wali
 | 765,000,000,000,000 | 915,170,302,652 | **915,170,302,648** | +4 |
 
 ### Why This Matters
-These discrepancies likely stem from legacy segment-boundary handling or precision issues in early 1990s C code. By recalculating these constants with a modern, deterministic **N/6 bit-masking methodology**, TSE provides a corrected reference for researchers. TSE has successfully verified these counts up to $10^{14}$ with bit-perfect consistency across both CPU (OpenMP) and GPU (CUDA) architectures.
+These discrepancies likely stem from legacy segment-boundary handling or precision issues in early 1990s C code. By recalculating these constants with a modern, deterministic **N/6 bit-masking methodology**, TSE provides a corrected reference for researchers. TSE has successfully verified these counts up to $10^{15}$ with bit-perfect consistency across both CPU (OpenMP) and GPU (CUDA) architectures.
 
 After ~4.65e14 (465 trillion), the dataset appears to remain consistently offset by +1 for all subsequent values. In other words, once the error occurs, every later cumulative count continues with the same shift.
 

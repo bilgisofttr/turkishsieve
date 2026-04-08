@@ -1,5 +1,5 @@
 
-# 🚀 Turkish Sieve Engine (TSE) V.1.0.0 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038661.svg)](https://doi.org/10.5281/zenodo.18038661)
+# 🚀 Turkish Sieve Engine (TSE) V.2.0.0 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038661.svg)](https://doi.org/10.5281/zenodo.18038661)
 ### Unique, Compact & Massive-Parallel Prime Discovery Engine
 ![GitHub stars](https://img.shields.io/github/stars/bilgisofttr/TurkishSieve?style=social)
 

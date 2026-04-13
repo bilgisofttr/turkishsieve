@@ -155,7 +155,7 @@ It appears that the systematic offsets (+1, +2, etc.) observed in my comparison 
 
 While **TSE** and **primesieve** are both internally bit-perfect, a simple mathematical summation of independent segments like $[a, b] + [b, c]$ does not naturally equal a continuous count of $[a, c]$. This is because a twin prime pair sitting exactly on the boundary ($b \pm 1$) is often excluded by both segments:
 * The first segment $[a, b]$ excludes it because $p+2$ is out of range.
-* The second segment $[b, c]$ excludes it because $p$ is out of range.
+* The second segment $[b, c]$ excludes it because $p-1$ is out of range.
 
 #### **Methodological Conclusion**
 1. **Midpoint Convention:** Professor Silva noted that legacy datasets often use a **midpoint ($p+1$) definition** to ensure that segments can be summed without losing boundary pairs.

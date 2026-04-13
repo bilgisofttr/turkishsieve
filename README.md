@@ -146,6 +146,24 @@ These discrepancies likely stem from legacy segment-boundary handling or precisi
 
 After ~4.65e14 (465 trillion), the dataset appears to remain consistently offset by +1 for all subsequent values. In other words, once the error occurs, every later cumulative count continues with the same shift.
 
+### **Update: Clarification on Boundary Handling and Segmented Summation**
+
+Following a professional technical dialogue with **Professor Tomás Oliveira e Silva**, I have gained further clarity on the nature of the discrepancies mentioned above. I would like to share these findings with the community and the developers.
+
+#### **The "Boundary Stitch" Issue**
+It appears that the systematic offsets (+1, +2, etc.) observed in my comparison with Nicely’s tables are primarily a result of how **segmented summation** is handled. 
+
+While **TSE** and **primesieve** are both internally bit-perfect, a simple mathematical summation of independent segments like $[a, b] + [b, c]$ does not naturally equal a continuous count of $[a, c]$. This is because a twin prime pair sitting exactly on the boundary ($b \pm 1$) is often excluded by both segments:
+* The first segment $[a, b]$ excludes it because $p+2$ is out of range.
+* The second segment $[b, c]$ excludes it because $p$ is out of range.
+
+#### **Methodological Conclusion**
+1. **Midpoint Convention:** Professor Silva noted that legacy datasets often use a **midpoint ($p+1$) definition** to ensure that segments can be summed without losing boundary pairs.
+2. **Segmented vs. Continuous:** To obtain a definitive, absolute count up to $N$ without using specific conventions, a **single continuous run from 0 to $N$** is required. Summing independent ranges without specific boundary-logic will result in a cumulative loss at each "stitch."
+3. **User Awareness:** As developers of high-performance engines, it is essential to inform end-users that summing results from separate range scans will not yield the same total as a single-scan count unless they manually account for the boundary conditions.
+
+I am currently updating the **TSE (Turkish Sieve Engine)** documentation to emphasize this technical necessity. I believe this insight is crucial for maintaining the rigorous standards of computational number theory.
+
 ---
 
 ## 📝 Sample Performance Analysis Report

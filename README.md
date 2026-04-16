@@ -20,7 +20,7 @@ We have published detailed distribution tables for primes and prime pairs up to 
 * [**Cousin Prime Statistics**](./cousinStatistics.md) – Detailed counts and last pair records.
 * [**General Prime Statistics**](./primesStatistics.md) – Comprehensive enumeration data.
 
-  **Results verified and contributed to OEIS (A007508, A152052).**
+  **Results verified and contributed to OEIS (A006880, A007508, A152052).**
 
 ---
 

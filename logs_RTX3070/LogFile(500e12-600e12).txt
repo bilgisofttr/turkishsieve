@@ -1978,9 +1978,9 @@ PERFORMANCE ANALYSIS & REPORT
       Range Start      : 524,000,000,000,000
       Range End        : 525,000,000,000,000
       Prime Type       : Twin Prime (p, p + 2) 
-      Last Twin Pair   :(524,999,999,998,211-524,999,999,998,213)
+      Last Twin Pair   :(524,999,999,998,999-525,000,000,000,001)
       Total Time       : 66 s 272 ms
-      TWIN COUNT       : 1,149,315,194
+      TWIN COUNT       : 1,149,315,195
 ------------------------------------------------------------
       Throughput       : 15.089 G-items/s
       CUDA Occupancy   : %100.0 (Architectural Efficiency)
@@ -5488,9 +5488,9 @@ PERFORMANCE ANALYSIS & REPORT
       Range Start      : 567,000,000,000,000
       Range End        : 568,000,000,000,000
       Prime Type       : Cousin Prime (p, p + 4) 
-      Last Cousin Pair :(567,999,999,999,517-567,999,999,999,521)
+      Last Cousin Pair :(567,999,999,999,997-568,000,000,000,001)
       Total Time       : 68 s 590 ms
-      COUSIN COUNT     : 1,143,971,601
+      COUSIN COUNT     : 1,143,971,602
 ------------------------------------------------------------
       Throughput       : 14.579 G-items/s
       CUDA Occupancy   : %100.0 (Architectural Efficiency)

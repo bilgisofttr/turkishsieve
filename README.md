@@ -1,5 +1,5 @@
 
-# 🚀 Turkish Sieve Engine (TSE) V.2.0.0 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038661.svg)](https://doi.org/10.5281/zenodo.18038661)
+# 🚀 Turkish Sieve Engine (TSE) V.2.0.1 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038661.svg)](https://doi.org/10.5281/zenodo.18038661)
 ### Unique, Compact & Massive-Parallel Prime Discovery Engine
 ![GitHub stars](https://img.shields.io/github/stars/bilgisofttr/TurkishSieve?style=social)
 
@@ -22,10 +22,10 @@ We have published detailed distribution tables for primes and prime pairs up to 
 
 ---
 
-### 🛠️ **Roadmap: Version 2.0.0 is Under Development!**
-The next generation of the **Turkish Sieve Engine** is currently being optimized. **Version 2.0.0** will be a major milestone in the project's evolution:
+### 🛠️ **Roadmap: Version 2.1.0 is Under Development!**
+The next generation of the **Turkish Sieve Engine** is currently being optimized. **Version 2.1.0** will be a major milestone in the project's evolution:
 
-* ✨ **General Prime Discovery:** Unlike Version 1.0 (which focuses on Twin and Cousin pairs), **V2.0.0 will include full support for detecting and enumerating General Primes**, providing a complete prime discovery suite.
+* ✨ **General Prime Discovery:** Unlike Version 1.0 (which focuses on Twin and Cousin pairs), **V2.1.0 will include full support for detecting and enumerating General Primes**, providing a complete prime discovery suite.
 * 🚀 **Multi-GPU & Performance:** Enhanced CUDA kernels designed for **multi-GPU configurations** and even deeper memory optimizations to push the boundaries of throughput.
 * 📦 **Standalone Executable:** V2.0.0 will be released as a highly optimized **standalone .exe file**, making massive-scale research accessible to all researchers without complex environment setups.
 

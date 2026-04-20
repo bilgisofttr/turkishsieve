@@ -1,3 +1,111 @@
+*************************** NEW REPORT ***********************
+==============================================================
+PERFORMANCE ANALYSIS & REPORT
+2026-03-13 19:59:52
+==============================================================
+      Engine Type      : GPU Segmented Sieve (Cuda Parallel.)
+      Device           : NVIDIA GeForce RTX 3070
+      Range Start      : 100,000,000,000,000
+      Range End        : 101,000,000,000,000
+      Prime Type       : Prime Numbers (p) 
+      Last Prime       : 100,999,999,999,949
+      Total Time       : 57 s 518 ms
+      PRIME COUNT      : 31,016,203,073
+------------------------------------------------------------
+      Throughput       : 17.386 G-items/s
+      CUDA Occupancy   : %100.0 (Architectural Efficiency)
+      Speed (Decimal)  : 17385.862 Million/s
+      Speed (Binary)   : 16580.450 Mi/s
+      System RAM Usage : 90.39 MB (Peak: 114.00 MB)
+      GPU VRAM Usage   : 4.00 MB
+  ------------------------------------------------------------
+ "17,385,861,817" numbers checked per second.
+===============================================================
+This report is the result of the TSE V.2.0.0 application.
+************************** END OF REPORT **********************
+
+
+*************************** NEW REPORT ***********************
+==============================================================
+PERFORMANCE ANALYSIS & REPORT
+2026-03-13 20:01:56
+==============================================================
+      Engine Type      : GPU Segmented Sieve (Cuda Parallel.)
+      Device           : NVIDIA GeForce RTX 3070
+      Range Start      : 100,000,000,000,000
+      Range End        : 101,000,000,000,000
+      Prime Type       : Twin Prime (p, p + 2) 
+      Last Twin Pair   :(100,999,999,999,907-100,999,999,999,909)
+      Total Time       : 32 s 220 ms
+      TWIN COUNT       : 1,270,127,074
+------------------------------------------------------------
+      Throughput       : 31.037 G-items/s
+      CUDA Occupancy   : %100.0 (Architectural Efficiency)
+      Speed (Decimal)  : 31036.623 Million/s
+      Speed (Binary)   : 29598.830 Mi/s
+      System RAM Usage : 89.88 MB (Peak: 114.00 MB)
+      GPU VRAM Usage   : 4.00 MB
+  ------------------------------------------------------------
+ "31,036,623,215" numbers checked per second.
+===============================================================
+This report is the result of the TSE V.2.0.0 application.
+************************** END OF REPORT **********************
+
+
+*************************** NEW REPORT ***********************
+==============================================================
+PERFORMANCE ANALYSIS & REPORT
+2026-03-13 20:04:09
+==============================================================
+      Engine Type      : GPU Segmented Sieve (Cuda Parallel.)
+      Device           : NVIDIA GeForce RTX 3070
+      Range Start      : 100,000,000,000,000
+      Range End        : 101,000,000,000,000
+      Prime Type       : Cousin Prime (p, p + 4) 
+      Last Cousin Pair :(100,999,999,998,379-100,999,999,998,383)
+      Total Time       : 32 s 242 ms
+      COUSIN COUNT     : 1,270,116,251
+------------------------------------------------------------
+      Throughput       : 31.015 G-items/s
+      CUDA Occupancy   : %100.0 (Architectural Efficiency)
+      Speed (Decimal)  : 31015.446 Million/s
+      Speed (Binary)   : 29578.634 Mi/s
+      System RAM Usage : 89.96 MB (Peak: 114.00 MB)
+      GPU VRAM Usage   : 4.00 MB
+  ------------------------------------------------------------
+ "31,015,445,691" numbers checked per second.
+===============================================================
+This report is the result of the TSE V.2.0.0 application.
+************************** END OF REPORT **********************
+
+
+
+
+*************************** NEW REPORT ***********************
+==============================================================
+PERFORMANCE ANALYSIS & REPORT
+2026-03-13 20:00:11
+==============================================================
+      Engine Type      : GPU Segmented Sieve (Cuda Parallel.)
+      Device           : NVIDIA GeForce RTX 3070
+      Range Start      : 101,000,000,000,000
+      Range End        : 102,000,000,000,000
+      Prime Type       : Prime Numbers (p) 
+      Last Prime       : 101,999,999,999,969
+      Total Time       : 57 s 518 ms
+      PRIME COUNT      : 31,006,703,608
+------------------------------------------------------------
+      Throughput       : 17.386 G-items/s
+      CUDA Occupancy   : %100.0 (Architectural Efficiency)
+      Speed (Decimal)  : 17385.862 Million/s
+      Speed (Binary)   : 16580.450 Mi/s
+      System RAM Usage : 90.39 MB (Peak: 114.00 MB)
+      GPU VRAM Usage   : 4.00 MB
+  ------------------------------------------------------------
+ "17,385,861,817" numbers checked per second.
+===============================================================
+This report is the result of the TSE V.2.0.0 application.
+************************** END OF REPORT **********************
 
 
 *************************** NEW REPORT ***********************

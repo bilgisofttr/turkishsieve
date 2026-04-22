@@ -14,7 +14,7 @@ TSE is the most efficient academic tool designed for the detection of primes, tw
 ## 📢 **Latest News & Upcoming Features**
 
 ### 📊 **Extended Statistics Now Available!**
-We have published detailed distribution tables for primes and prime pairs up to the **$1.8x10^{15}$** scale. These tables provide a deterministic reference for researchers and verify the accuracy of the **TSE N/6 bit methodology**.
+We have published detailed distribution tables for primes and prime pairs up to the **$1.9x10^{15}$** scale. These tables provide a deterministic reference for researchers and verify the accuracy of the **TSE N/6 bit methodology**.
 
 * [**Twin Prime Statistics**](./twinStatistics.md) – Detailed counts and last pair records.
 * [**Cousin Prime Statistics**](./cousinStatistics.md) – Detailed counts and last pair records.
@@ -24,10 +24,8 @@ We have published detailed distribution tables for primes and prime pairs up to 
 
 ### 🛠️ **Roadmap: Version 2.1.0 is Under Development!**
 The next generation of the **Turkish Sieve Engine** is currently being optimized. **Version 2.1.0** will be a major milestone in the project's evolution:
-
-* ✨ **General Prime Discovery:** Unlike Version 1.0 (which focuses on Twin and Cousin pairs), **V2.1.0 will include full support for detecting and enumerating General Primes**, providing a complete prime discovery suite.
 * 🚀 **Multi-GPU & Performance:** Enhanced CUDA kernels designed for **multi-GPU configurations** and even deeper memory optimizations to push the boundaries of throughput.
-* 📦 **Standalone Executable:** V2.0.0 will be released as a highly optimized **standalone .exe file**, making massive-scale research accessible to all researchers without complex environment setups.
+* 📦 **Standalone Executable:** V2.1.0 will be released as a highly optimized **standalone .exe file**, making massive-scale research accessible to all researchers without complex environment setups.
 
 > **Status:** 🏗️ **Optimization in progress. Stay tuned for the official release!**
 
@@ -37,7 +35,7 @@ The next generation of the **Turkish Sieve Engine** is currently being optimized
 * **Memory Efficiency:** **N/6 bit** data structure (6x more compact than classical sieves).
 * **GPU Acceleration:** Up to **11.0× speedup** compared to multi-core CPUs in optimal ranges.
 * **Scientific Accuracy:** 100% compliance with **OEIS A007508** (Zero error margin for twin&cousin primes).
-* **First Achievement:** Successful full enumeration of cousin primes up to the $10^{14}$ limit.
+* **First Achievement:** Successful full enumeration of cousin primes up to the $1.9x10^{15}$ limit.
 
 ---
 

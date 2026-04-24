@@ -14,7 +14,7 @@ TSE is the most efficient academic tool designed for the detection of primes, tw
 ## 📢 **Latest News & Upcoming Features**
 
 ### 📊 **Extended Statistics Now Available!**
-We have published detailed distribution tables for primes and prime pairs up to the **$2x10^{15}$** scale. These tables provide a deterministic reference for researchers and verify the accuracy of the **TSE N/6 bit methodology**.
+We have published detailed distribution tables for primes and prime pairs up to the **$2.2x10^{15}$** scale. These tables provide a deterministic reference for researchers and verify the accuracy of the **TSE N/6 bit methodology**.
 
 * [**Twin Prime Statistics**](./twinStatistics.md) – Detailed counts and last pair records.
 * [**Cousin Prime Statistics**](./cousinStatistics.md) – Detailed counts and last pair records.

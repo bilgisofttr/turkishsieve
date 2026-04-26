@@ -14,7 +14,7 @@ TSE is the most efficient academic tool designed for the detection of primes, tw
 ## 📢 **Latest News & Upcoming Features**
 
 ### 📊 **Extended Statistics Now Available!**
-We have published detailed distribution tables for primes and prime pairs up to the **$2.4x10^{15}$** scale. These tables provide a deterministic reference for researchers and verify the accuracy of the **TSE N/6 bit methodology**.
+We have published detailed distribution tables for primes and prime pairs up to the **$2.6x10^{15}$** scale. These tables provide a deterministic reference for researchers and verify the accuracy of the **TSE N/6 bit methodology**.
 
 * [**Twin Prime Statistics**](./twinStatistics.md) – Detailed counts and last pair records.
 * [**Cousin Prime Statistics**](./cousinStatistics.md) – Detailed counts and last pair records.
@@ -35,7 +35,7 @@ The next generation of the **Turkish Sieve Engine** is currently being optimized
 * **Memory Efficiency:** **N/6 bit** data structure (6x more compact than classical sieves).
 * **GPU Acceleration:** Up to **11.0× speedup** compared to multi-core CPUs in optimal ranges.
 * **Scientific Accuracy:** 100% compliance with **OEIS A007508** (Zero error margin for twin&cousin primes).
-* **First Achievement:** Successful full enumeration of cousin primes up to the $1.9x10^{15}$ limit.
+* **First Achievement:** Successful full enumeration of cousin primes up to the $2.6x10^{15}$ limit.
 
 ---
 
@@ -66,9 +66,9 @@ The Turkish Sieve (TS) methodology has been stress-tested across vast ranges and
 | $10^9$ | 3,424,506 | 0.060 s | **0.071 s*** | **0.015 s** | Latency Floor |
 | $10^{10}$ | 27,412,679 | 0.266 s | **0.080 s** | **0.167 s** | **3.3×** |
 | $10^{11}$ | 224,376,048 | 0.565 s | **0.177 s** | **2.053 s** | **3.2×** |
-| $10^{12}$ | 1,870,585,220 | 5.510 s | **0.927 s** | **21.500 s** | **5.9×** |
-| $10^{13}$ | 15,834,664,872 | 96.962 s | **14.896 s** | **198.400 s** | **6.5×** |
-| $10^{14}$ | 135,780,321,665 | 2,264.706 s | **359.341 s** | **2,150.000 s** | **6.3×** |
+| $10^{12}$ | 1,870,585,220 | 5.510 s | **0.927 s** | **21.5 s** | **5.9×** |
+| $10^{13}$ | 15,834,664,872 | 96.962 s | **14.896 s** | **198.4 s** | **6.5×** |
+| $10^{14}$ | 135,780,321,665 | 2,264.706 s | **359.341 s** | **2,150 s** | **6.3×** |
 
 **Performance Note:** At $10^{12}$, the **RTX 5090** GPU processed 1,870,585,220 twin candidates in **0.927 seconds**, achieving a massive throughput of **1,078.7 billion (1.07 T-items/s)** candidates per second.
 
@@ -78,10 +78,10 @@ The Turkish Sieve (TS) methodology has been stress-tested across vast ranges and
 | $10^8$ | 440,258 | 0.018 s | **0.070 s*** | **0.015 s** | Latency Floor |
 | $10^9$ | 3,424,680 | 0.060 s | **0.071 s*** | **0.016 s** | Latency Floor |
 | $10^{10}$ | 27,409,999 | 0.292 s | **0.082 s** | **0.172 s** | **3.5×** |
-| $10^{11}$ | 224,373,161 | 0.593 s | **0.156 s** | **2.110 s** | **3.8×** |
-| $10^{12}$ | 1,870,585,459 | 5.590 s | **0.880 s** | **22.200 s** | **6.3×** |
-| $10^{13}$ | 15,834,656,003 | 97.277 s | **14.822 s** | **201.500 s** | **6.5×** |
-| $10^{14}$ | 135,779,962,760 | 2,267.851 s | **360.050 s** | **2,210.000 s** | **6.3×** |
+| $10^{11}$ | 224,373,161 | 0.593 s | **0.156 s** | **2.11 s** | **3.8×** |
+| $10^{12}$ | 1,870,585,459 | 5.590 s | **0.880 s** | **22.2 s** | **6.3×** |
+| $10^{13}$ | 15,834,656,003 | 97.277 s | **14.822 s** | **201.5 s** | **6.5×** |
+| $10^{14}$ | 135,779,962,760 | 2,267.851 s | **360.050 s** | **2,210 s** | **6.3×** |
 
 *\*Latency Floor: Processing time at low ranges is dominated by CUDA kernel overhead and environment initialization.*
 

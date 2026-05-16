@@ -1,5 +1,5 @@
 
-# 🚀 Turkish Sieve Engine (TSE) V.2.0.1 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038661.svg)](https://doi.org/10.5281/zenodo.18038661)
+# 🚀 Turkish Sieve Engine (TSE) V.2.0.2 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18038661.svg)](https://doi.org/10.5281/zenodo.18038661)
 ### Unique, Compact & Massive-Parallel Prime Discovery Engine
 ![GitHub stars](https://img.shields.io/github/stars/bilgisofttr/TurkishSieve?style=social)
 
@@ -13,8 +13,23 @@ TSE is the most efficient academic tool designed for the detection of primes, tw
 
 ## 📢 **Latest News & Upcoming Features**
 
+### 🚀 **TSE v2.0.2 Released!**
+We are pleased to announce the release of **TSE v2.0.2**.
+
+This version introduces:
+- GPU (CUDA) based automatic segmented computation with user-defined start and range intervals
+- Fully automated logging system for each computed segment (auto export)
+- Optimized GPU and CPU execution pipelines
+- Improved segmented range processing performance
+- Refined and standardized report/output formatting for better readability and consistency
+- Updated CLI/UI definitions for clearer execution modes and range handling
+
+All computation modes remain bit-perfect consistent across CPU and GPU implementations (OEIS-consistent outputs).
+
 ### 📊 **Extended Statistics Now Available!**
 We have published detailed distribution tables for primes and prime pairs up to the **$2.6x10^{15}$** scale. These tables provide a deterministic reference for researchers and verify the accuracy of the **TSE N/6 bit methodology**.
+
+
 
 * [**Twin Prime Statistics**](./twinStatistics.md) – Detailed counts and last pair records.
 * [**Cousin Prime Statistics**](./cousinStatistics.md) – Detailed counts and last pair records.

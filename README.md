@@ -276,10 +276,10 @@ This report is the result of the TSE V.2.0.0 application.
 
 Get the pre-built Windows executable (ZIP package) from the latest release:
 
-[![Download TSE ZIP](https://img.shields.io/github/downloads/bilgisofttr/turkishsieve/v2.0.2/TSE_v202.zip?color=blue&style=for-the-badge&logo=github)](https://github.com/bilgisofttr/turkishsieve/releases/tag/v2.0.2)
+[![Download TSE ZIP](https://img.shields.io/github/downloads/bilgisofttr/turkishsieve/v.2.0.2/TSE_v202.zip?color=blue&style=for-the-badge&logo=github)](https://github.com/bilgisofttr/turkishsieve/releases/tag/v2.0.2)
 Or visit the [Releases page](https://github.com/bilgisofttr/turkishsieve/releases) directly.
 
-Run Tse_v100.exe.
+Run Tse_v202.exe.
 
 The application will automatically detect your hardware (Cores, Cache, GPU, VRAM).
 
